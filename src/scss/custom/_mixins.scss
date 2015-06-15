@@ -1,0 +1,157 @@
+//
+// MIXINS.SCSS
+//------------------------------------------------------------------------
+
+
+
+//
+// Set Mixins
+//------------------------------------------------------------------------
+
+// Transitions
+@mixin transition($transition) {
+   -webkit-transition: $transition;
+   -moz-transition: $transition;
+   -ms-transition: $transition;
+   -o-transition: $transition;
+   transition: $transition;
+}
+
+// Transform
+@mixin transform($transform) {
+   -webkit-transform: $transform;
+   -moz-transform: $transform;
+   -ms-transform: $transform;
+   -o-transform: $transform;
+   transform: $transform;
+}
+
+
+@mixin translate3d($tx,$ty,$tz) {
+   -webkit-transform: translate3d($tx,$ty,$tz);
+   -moz-transform: translate3d($tx,$ty,$tz);
+   -ms-transform: translate3d($tx,$ty,$tz);
+   -o-transform: translate3d($tx,$ty,$tz);
+   transform: translate3d($tx,$ty,$tz)
+}
+
+
+// Border Radius
+@mixin border-radius($radius) {
+   -webkit-border-radius: $radius;
+   border-radius: $radius;
+   background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+}
+
+
+// Appearance
+@mixin appearance ($value) {
+   -webkit-appearance: $value;
+   -moz-appearance: $value;
+   -ms-appearance: $value;
+   -o-appearance: $value;
+   appearance: $value;
+}
+
+
+@mixin touch-callout ($value) {
+   -webkit-touch-callout: $value;
+   -webkit-user-select: $value;
+   -khtml-user-select: $value;
+   -moz-user-select: $value;
+   -ms-user-select: $value;
+   user-select: $value;
+}
+
+@mixin user-select($value: none) {
+   -webkit-user-select: $value;
+   -ms-touch-action: $value;
+   -ms-user-select: $value;
+   -moz-user-select: $value;
+}
+
+
+@mixin x-center() {
+   position:absolute;
+   left:50%;
+   -webkit-transform: translateX(-50%);
+   -ms-transform: translateX(-50%);
+   transform: translateX(-50%);
+}
+
+
+@mixin y-center() {
+   position:relative;
+   top:50%;
+   -webkit-transform: translateY(-50%);
+   -ms-transform: translateY(-50%);
+   transform: translateY(-50%);
+}
+
+
+@mixin xy-center() {
+   position:absolute;
+   top:50%;
+   left:50%;
+   -webkit-transform: translate(-50%, -50%);
+   -ms-transform: translate(-50%, -50%);
+   transform: translate(-50%, -50%);
+}
+
+
+@mixin rem-fallback($property, $values, $base-value: $rem-base){
+   #{$property}: #{$values}px;
+   #{$property}: rem-calc($values, $base-value: $rem-base);
+}
+
+@mixin font-face($fontname, $fontpath) {
+   @font-face {
+      font-family: $fontname;
+      src:url('#{$fontpath}.eot');
+      src:url('#{$fontpath}.eot?#iefix-apoii3') format('embedded-opentype'),
+      url('#{$fontpath}.woff') format('woff'),
+      url('#{$fontpath}.ttf') format('truetype'),
+      url('#{$fontpath}.svg') format('svg');
+      font-weight: normal;
+      font-style: normal;
+   }
+}
+
+@mixin multi-columns($colnum: '2', $columnwidth: '100px') {
+   -moz-column-count: $colnum;
+   -webkit-column-count: $colnum;
+   column-count: $colnum;
+   -moz-column-width: $columnwidth;
+   -webkit-column-width: $columnwidth;
+   column-width: $columnwidth;
+}
+
+@mixin font-face-settings($fontname) {
+   font-family: $fontname;
+   speak: none;
+   font-style: normal;
+   font-weight: normal;
+   font-variant: normal;
+   text-transform: none;
+   line-height: 1;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+//
+// Render necessary classes for mixins
+//------------------------------------------------------------------------
+
+.xy-center {
+   @include xy-center();
+}
+
+.x-center {
+   @include x-center();
+}
+
+.y-center {
+   @include y-center();
+}

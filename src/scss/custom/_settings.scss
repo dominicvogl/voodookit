@@ -1,0 +1,13 @@
+//
+// OWN NEW SETTINGS
+//------------------------------------------------------------------------
+
+
+
+//
+// HI-PPI FOR MEDIA QUERIES
+//------------------------------------------------------------------------
+
+$screen: "only screen";
+$ratio: 1.3;
+$hi-ppi: "#{$screen} and (min--moz-device-pixel-ratio: #{$ratio}), (-o-min-device-pixel-ratio: #{$ratio}), (-webkit-min-device-pixel-ratio: #{$ratio}), (min-device-pixel-ratio: #{$ratio}), (min-resolution: #{$ratio}dppx)";

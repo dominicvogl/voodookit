@@ -1,0 +1,49 @@
+//
+// GLOBAL.SCSS
+//------------------------------------------------------------------------
+
+
+
+//
+// ICONFONT
+//-----------------------------------------------------------------------
+
+/*
+@font-face {
+  font-family: 'iconfont';
+  src:url('../icons/cccc-icons.eot?x5o0va');
+  src:url('../icons/cccc-icons.eot?#iefixx5o0va') format('embedded-opentype'),
+  url('../icons/cccc-icons.woff?x5o0va') format('woff'),
+  url('../icons/cccc-icons.ttf?x5o0va') format('truetype'),
+  url('../icons/cccc-icons.svg?x5o0va#cccc-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}*/
+
+@include font-face($iconset, '../icons/iconset');
+
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: $iconset;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  -webkit-font-smoothing: antialiased;
+  //-moz-font-smoothing: grayscale;
+}
+
+.icon-round-arrow-right:before {
+  content: "\2192";
+}
+.icon-round-arrow-left:before {
+  content: "\2190";
+}
+.icon-ball:before {
+  content: "\2022";
+}
+.icon-reload:before {
+  content: "\61";
+}
