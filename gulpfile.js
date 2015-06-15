@@ -15,11 +15,14 @@ var gulp = require('gulp'),
    //compass = require('gulp-compass'),
    autoprefixer = require("gulp-autoprefixer");
 
+var sourcepath = 'src/';
+var sasspath = sourcepath + 'scss/';
+
 // Compile SASS files
 gulp.task('styles', function () {
 
    // Foundation 5
-   gulp.src(['src/scss/app.scss'])
+   gulp.src([sasspath + 'app.scss'])
       .pipe(plumber())
       .pipe(sass({outputStyle: 'expanded'}))
       .pipe(gulp.dest('css'))
