@@ -3,26 +3,20 @@
 //------------------------------------------------------------------------
 
 // Include gulp
-var gulp = require('gulp'),
-
-// Include gulp plugin
+var
+   gulp = require('gulp'),
    uglify = require('gulp-uglify'),
    concat = require('gulp-concat'),
    sass = require('gulp-sass'),
    watch = require('gulp-watch'),
    plumber = require('gulp-plumber'),
-   rename = require("gulp-rename"),
-   //compass = require('gulp-compass'),
-   autoprefixer = require("gulp-autoprefixer");
-
-var sourcepath = 'src/';
-var sasspath = sourcepath + 'scss/';
+   rename = require("gulp-rename");
 
 // Compile SASS files
 gulp.task('styles', function () {
 
    // Foundation 5
-   gulp.src([sasspath + 'app.scss'])
+   gulp.src(['src/scss/app.scss'])
       .pipe(plumber())
       .pipe(sass({outputStyle: 'expanded'}))
       .pipe(gulp.dest('css'))
@@ -35,29 +29,30 @@ gulp.task('styles', function () {
 var filelist = [
 
    // Foundation Stuff
-   //'src/js/foundation/foundation.js',
-   //'src/js/foundation/foundation.abide.js',
-   //'src/js/foundation/foundation.accordion.js',
-   //'src/js/foundation/foundation.alert.js',
-   //'src/js/foundation/foundation.clearing.js',
-   //'src/js/foundation/foundation.dropdown.js',
-   //'src/js/foundation/foundation.equalizer.js',
-   //'src/js/foundation/foundation.interchange.js',
-   //'src/js/foundation/foundation.joyride.js',
-   //'src/js/foundation/foundation.magellan.js',
-   //'src/js/foundation/foundation.offcanvas.js',
-   //'src/js/foundation/foundation.orbit.js',
-   //'src/js/foundation/foundation.reveal.js',
-   //'src/js/foundation/foundation.slider.js',
-   //'src/js/foundation/foundation.tab.js',
-   //'src/js/foundation/foundation.tooltip.js',
-   //'src/js/foundation/foundation.topbar.js',
+   //'src/js/libs/foundation/foundation.js',
+   //'src/js/libs/foundation/foundation.abide.js',
+   //'src/js/libs/foundation/foundation.accordion.js',
+   //'src/js/libs/foundation/foundation.alert.js',
+   //'src/js/libs/foundation/foundation.clearing.js',
+   //'src/js/libs/foundation/foundation.dropdown.js',
+   //'src/js/libs/foundation/foundation.equalizer.js',
+   //'src/js/libs/foundation/foundation.interchange.js',
+   //'src/js/libs/foundation/foundation.joyride.js',
+   //'src/js/libs/foundation/foundation.magellan.js',
+   //'src/js/libs/foundation/foundation.offcanvas.js',
+   //'src/js/libs/foundation/foundation.orbit.js',
+   //'src/js/libs/foundation/foundation.reveal.js',
+   //'src/js/libs/foundation/foundation.slider.js',
+   //'src/js/libs/foundation/foundation.tab.js',
+   //'src/js/libs/foundation/foundation.tooltip.js',
+   //'src/js/libs/foundation/foundation.topbar.js',
 
    // Your Own Stuff
-   'src/js/custom/fastclick.js',
-   'src/js/custom/jquery.min.js',
-   //'src/js/custom/modernizr.js',
-   'src/js/custom/setup.js'
+   'src/js/libs/custom/fastclick.js',
+   'src/js/libs/custom/jquery.min.js',
+   'src/js/libs/custom/modernizr.js',
+   'src/js/custom/custom.js'
+
 ];
 
 // Concatenate & Minify JS
@@ -73,8 +68,8 @@ gulp.task('scripts', function () {
 
 // Watch files for changes
 gulp.task('watch', function () {
-   gulp.watch('scss/**/*.scss', ['styles']);
-   gulp.watch('js/src/*.js', ['scripts']);
+   gulp.watch('src/scss/**/*.scss', ['styles']);
+   gulp.watch('src/js/**/*.js', ['scripts']);
 });
 
 // Default Task
