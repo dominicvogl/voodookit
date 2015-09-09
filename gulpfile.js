@@ -1,34 +1,31 @@
-//
-// Gulp Configuration
-//------------------------------------------------------------------------
+// Gulp Modules
+var gulp = require('gulp'),
+    iconfont = require('gulp-iconfont'),
+    consolidate = require('gulp-consolidate'),
+    uglify = require('gulp-uglify'),
+    concat = require('gulp-concat'),
+    path = require('path'),
+    watch = require('gulp-watch'),
+    plumber = require('gulp-plumber'),
+    rename = require('gulp-rename'),
+    sass = require('gulp-sass'),
+    favicons = require('gulp-favicons');
 
-// Include gulp
-var
-   gulp = require('gulp'),
-   uglify = require('gulp-uglify'),
-   concat = require('gulp-concat'),
-   sass = require('gulp-sass'),
-   watch = require('gulp-watch'),
-   plumber = require('gulp-plumber'),
-   rename = require("gulp-rename");
+var defaultTasks = [
+   'styles',
+   'scripts',
+   'watch'
+];
 
-// Compile SASS files
-gulp.task('styles', function () {
 
-   // Foundation 5
-   gulp.src(['src/scss/app.scss'])
-      .pipe(plumber())
-      .pipe(sass({outputStyle: 'expanded'}))
-      .pipe(gulp.dest('css'))
-      .pipe(rename({suffix: '.min'}))
-      .pipe(sass({outputStyle: 'compressed'}))
-      .pipe(gulp.dest('css'));
+var jsFilesApp = [
 
-});
+    // Basics
+    'src/js/libs/custom/fastclick.js',
+    'src/js/libs/custom/jquery.min.js',
+    'src/js/libs/custom/modernizr.js',
 
-var filelist = [
-
-   // Foundation Stuff
+    // Foundation Stuff
    //'src/js/libs/foundation/foundation.js',
    //'src/js/libs/foundation/foundation.abide.js',
    //'src/js/libs/foundation/foundation.accordion.js',
@@ -48,29 +45,100 @@ var filelist = [
    //'src/js/libs/foundation/foundation.topbar.js',
 
    // Your Own Stuff
-   'src/js/libs/custom/fastclick.js',
-   'src/js/libs/custom/jquery.min.js',
-   'src/js/libs/custom/modernizr.js',
    'src/js/custom/custom.js'
-
 ];
 
-// Concatenate & Minify JS
-gulp.task('scripts', function () {
-   gulp.src(filelist)
-      .pipe(plumber())
-      .pipe(concat('/app.js'))
-      .pipe(gulp.dest('js'))
-      .pipe(uglify())
-      .pipe(rename({suffix: '.min'}))
-      .pipe(gulp.dest('js'))
-});
 
-// Watch files for changes
-gulp.task('watch', function () {
+gulp.task('styles', stylesTask);
+
+gulp.task('scripts', scriptsTask);
+
+gulp.task('icons', iconsTask);
+
+gulp.task('favicon', faviconTask);
+
+gulp.task('watch', watchTask);
+
+gulp.task('default', defaultTasks);
+
+function watchTask() {
    gulp.watch('src/scss/**/*.scss', ['styles']);
-   gulp.watch('src/js/**/*.js', ['scripts']);
-});
+   gulp.watch(jsFilesApp, ['scripts']);
+}
 
-// Default Task
-gulp.task('default', ['styles', 'watch']);
+function iconsTask() {
+   gulp.src(['src/assets/svg/*.svg'])
+       .pipe(iconfont({
+          fontName: 'icon',
+          appendCodepoints: true
+       }))
+       .on('codepoints', function (codepoints, options) {
+          gulp.src('src/scss/template/icons.scss')
+              .pipe(consolidate('lodash', {
+                 glyphs: codepoints,
+                 fontName: 'icon',
+                 fontPath: '../fonts/generated/',
+                 className: 'icon'
+              }))
+              .pipe(gulp.dest('src/scss/generated'));
+       })
+       .pipe(gulp.dest('fonts/generated'));
+}
+
+function stylesTask() {
+   var compileStyles = function (_baseName) {
+      gulp.src(['src/scss/' + _baseName + '.scss'])
+          .pipe(plumber())
+          .pipe(sass({outputStyle: 'expanded'}))
+          .pipe(gulp.dest('Resources/Public/Css'))
+          .pipe(rename({suffix: '.min'}))
+          .pipe(sass({outputStyle: 'compressed'}))
+          .pipe(gulp.dest('Resources/Public/Css'));
+   };
+
+   compileStyles('app');
+}
+
+function scriptsTask() {
+   var compileScripts = function (files, targetFile) {
+      gulp.src(files)
+          .pipe(plumber())
+          .pipe(concat(targetFile + '.js'))
+          .pipe(gulp.dest('js'))
+          .pipe(uglify())
+          .pipe(rename({suffix: '.min'}))
+          .pipe(gulp.dest('js'));
+   };
+
+   compileScripts(jsFilesApp, 'app');
+}
+
+function faviconTask() {
+   gulp.src(['src/assets/favicon/favicon.png'])
+       .pipe(favicons({
+          files: {
+             src: 'src/assets/favicon/favicon.png',
+             dest: 'assets/favicon',
+             iconsPath: '/Icons/',
+             html: '/dev/null'
+          },
+          icons: {
+             android: true,
+             appleIcon: true,
+             appleStartup: false,
+             coast: true,
+             favicons: true,
+             firefox: true,
+             opengraph: true,
+             windows: false,
+             yandex: false
+          },
+          settings: {
+             logging: false,
+             vinylMode: true,
+             background: false
+          }
+       }))
+       .pipe(gulp.dest('assets/favicon'));
+}
+
