@@ -1,15 +1,16 @@
 // Gulp Modules
 var gulp = require('gulp'),
-    iconfont = require('gulp-iconfont'),
-    consolidate = require('gulp-consolidate'),
-    uglify = require('gulp-uglify'),
-    concat = require('gulp-concat'),
-    path = require('path'),
-    watch = require('gulp-watch'),
-    plumber = require('gulp-plumber'),
-    rename = require('gulp-rename'),
-    sass = require('gulp-sass'),
-    favicons = require('gulp-favicons');
+   iconfont = require('gulp-iconfont'),
+   consolidate = require('gulp-consolidate'),
+   uglify = require('gulp-uglify'),
+   concat = require('gulp-concat'),
+   path = require('path'),
+   watch = require('gulp-watch'),
+   plumber = require('gulp-plumber'),
+   rename = require('gulp-rename'),
+   sass = require('gulp-sass'),
+   sourcemaps = require('gulp-sourcemaps'),
+   favicons = require('gulp-favicons');
 
 var defaultTasks = [
    'styles',
@@ -17,15 +18,14 @@ var defaultTasks = [
    'watch'
 ];
 
-
 var jsFilesApp = [
 
-    // Basics
-    'src/js/libs/custom/fastclick.js',
-    'src/js/libs/custom/jquery.min.js',
-    'src/js/libs/custom/modernizr.js',
+   // Basics
+   'src/js/libs/custom/fastclick.js',
+   'src/js/libs/custom/jquery.min.js',
+   'src/js/libs/custom/modernizr.js',
 
-    // Foundation Stuff
+   // Foundation Stuff
    //'src/js/libs/foundation/foundation.js',
    //'src/js/libs/foundation/foundation.abide.js',
    //'src/js/libs/foundation/foundation.accordion.js',
@@ -48,7 +48,6 @@ var jsFilesApp = [
    'src/js/custom/custom.js'
 ];
 
-
 gulp.task('styles', stylesTask);
 
 gulp.task('scripts', scriptsTask);
@@ -68,32 +67,32 @@ function watchTask() {
 
 function iconsTask() {
    gulp.src(['src/assets/svg/*.svg'])
-       .pipe(iconfont({
-          fontName: 'icon',
-          appendCodepoints: true
-       }))
-       .on('codepoints', function (codepoints, options) {
-          gulp.src('src/scss/template/icons.scss')
-              .pipe(consolidate('lodash', {
-                 glyphs: codepoints,
-                 fontName: 'icon',
-                 fontPath: '../fonts/generated/',
-                 className: 'icon'
-              }))
-              .pipe(gulp.dest('src/scss/generated'));
-       })
-       .pipe(gulp.dest('fonts/generated'));
+      .pipe(iconfont({
+         fontName: 'icon',
+         appendCodepoints: true
+      }))
+      .on('codepoints', function (codepoints, options) {
+         gulp.src('src/scss/template/icons.scss')
+            .pipe(consolidate('lodash', {
+               glyphs: codepoints,
+               fontName: 'icon',
+               fontPath: '../fonts/generated/',
+               className: 'icon'
+            }))
+            .pipe(gulp.dest('src/scss/generated'));
+      })
+      .pipe(gulp.dest('fonts/generated'));
 }
 
 function stylesTask() {
    var compileStyles = function (_baseName) {
       gulp.src(['src/scss/' + _baseName + '.scss'])
-          .pipe(plumber())
-          .pipe(sass({outputStyle: 'expanded'}))
-          .pipe(gulp.dest('Resources/Public/Css'))
-          .pipe(rename({suffix: '.min'}))
-          .pipe(sass({outputStyle: 'compressed'}))
-          .pipe(gulp.dest('Resources/Public/Css'));
+         .pipe(plumber())
+         .pipe(sourcemaps.init())
+         .pipe(sass({outputStyle: 'compressed'}))
+         .pipe(rename({suffix: '.min'}))
+         .pipe(sourcemaps.write('./'))
+         .pipe(gulp.dest('./css'))
    };
 
    compileStyles('app');
@@ -102,12 +101,12 @@ function stylesTask() {
 function scriptsTask() {
    var compileScripts = function (files, targetFile) {
       gulp.src(files)
-          .pipe(plumber())
-          .pipe(concat(targetFile + '.js'))
-          .pipe(gulp.dest('js'))
-          .pipe(uglify())
-          .pipe(rename({suffix: '.min'}))
-          .pipe(gulp.dest('js'));
+         .pipe(plumber())
+         .pipe(concat(targetFile + '.js'))
+         .pipe(gulp.dest('js'))
+         .pipe(uglify())
+         .pipe(rename({suffix: '.min'}))
+         .pipe(gulp.dest('js'));
    };
 
    compileScripts(jsFilesApp, 'app');
@@ -115,30 +114,30 @@ function scriptsTask() {
 
 function faviconTask() {
    gulp.src(['src/assets/favicon/favicon.png'])
-       .pipe(favicons({
-          files: {
-             src: 'src/assets/favicon/favicon.png',
-             dest: 'assets/favicon',
-             iconsPath: '/Icons/',
-             html: '/dev/null'
-          },
-          icons: {
-             android: true,
-             appleIcon: true,
-             appleStartup: false,
-             coast: true,
-             favicons: true,
-             firefox: true,
-             opengraph: true,
-             windows: false,
-             yandex: false
-          },
-          settings: {
-             logging: false,
-             vinylMode: true,
-             background: false
-          }
-       }))
-       .pipe(gulp.dest('assets/favicon'));
+      .pipe(favicons({
+         files: {
+            src: 'src/assets/favicon/favicon.png',
+            dest: 'assets/favicon',
+            iconsPath: '/Icons/',
+            html: '/dev/null'
+         },
+         icons: {
+            android: true,
+            appleIcon: true,
+            appleStartup: false,
+            coast: true,
+            favicons: true,
+            firefox: true,
+            opengraph: true,
+            windows: false,
+            yandex: false
+         },
+         settings: {
+            logging: false,
+            vinylMode: true,
+            background: false
+         }
+      }))
+      .pipe(gulp.dest('assets/favicon'));
 }
 
