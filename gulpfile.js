@@ -87,21 +87,12 @@ function iconsTask() {
 function stylesTask() {
    var compileStyles = function (_baseName) {
       gulp.src(['src/scss/' + _baseName + '.scss'])
-<<<<<<< HEAD
-          .pipe(plumber())
-          .pipe(sass({outputStyle: 'expanded'}))
-          .pipe(gulp.dest('css'))
-          .pipe(rename({suffix: '.min'}))
-          .pipe(sass({outputStyle: 'compressed'}))
-          .pipe(gulp.dest('css'));
-=======
          .pipe(plumber())
          .pipe(sourcemaps.init())
          .pipe(sass({outputStyle: 'compressed'}))
          .pipe(rename({suffix: '.min'}))
          .pipe(sourcemaps.write('./'))
          .pipe(gulp.dest('./css'))
->>>>>>> developement
    };
 
    compileStyles('app');
