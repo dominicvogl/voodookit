@@ -1,0 +1,19 @@
+//
+// type.scss
+// Author: BERGWERK [dv]
+// -----------------------------------
+
+$anchor-font-color: $primary-color;
+$anchor-font-color-hover: lighten($primary-color, 25%);
+
+@mixin anchor(
+   $font-color: $anchor-font-color,
+   $font-color-hover: $anchor-font-color-hover) {
+
+   color: $font-color;
+
+   &:hover {
+      color: $font-color-hover;
+      cursor: pointer;
+   }
+}

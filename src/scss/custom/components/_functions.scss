@@ -1,0 +1,12 @@
+//
+// functions.scss
+// Author: Dominic Vogl (http://www.dominicvogl.de)
+// ------------------------------------------------------
+
+@function set-text-color($color) {
+   @if (lightness($color) > 50) {
+      @return $black; // Lighter backgorund, return dark color
+   } @else {
+      @return $white; // Darker background, return light color
+   }
+}

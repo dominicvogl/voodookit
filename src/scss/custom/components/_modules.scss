@@ -1,0 +1,19 @@
+//
+// module.scss
+// Author: Dominic Vogl (http://www.dominicvogl.de)
+// ------------------------------------------------------
+
+$module-base-bg-color: $primary-color;
+
+@mixin module-color-scheme(
+   $bg-color: $module-base-bg-color) {
+   @include linear-gradient($bg-color, $bg-color, darken($bg-color, 15%));
+
+   h1, h2, h3, p {
+      color: set-text-color($bg-color);
+   }
+
+   a {
+      @include anchor($white, darken($white, 15%));
+   }
+}

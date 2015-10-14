@@ -2,8 +2,6 @@
 // MIXINS.SCSS
 //------------------------------------------------------------------------
 
-
-
 //
 // Set Mixins
 //------------------------------------------------------------------------
@@ -26,26 +24,23 @@
    transform: $transform;
 }
 
-
 @mixin translate3d($tx,$ty,$tz) {
-   -webkit-transform: translate3d($tx,$ty,$tz);
-   -moz-transform: translate3d($tx,$ty,$tz);
-   -ms-transform: translate3d($tx,$ty,$tz);
-   -o-transform: translate3d($tx,$ty,$tz);
-   transform: translate3d($tx,$ty,$tz)
+   -webkit-transform: translate3d($tx, $ty, $tz);
+   -moz-transform: translate3d($tx, $ty, $tz);
+   -ms-transform: translate3d($tx, $ty, $tz);
+   -o-transform: translate3d($tx, $ty, $tz);
+   transform: translate3d($tx, $ty, $tz)
 }
-
 
 // Border Radius
 @mixin border-radius($radius) {
    -webkit-border-radius: $radius;
    border-radius: $radius;
-   background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+   background-clip: padding-box; /* stops bg color from leaking outside the border: */
 }
 
-
 // Appearance
-@mixin appearance ($value) {
+@mixin appearance($value) {
    -webkit-appearance: $value;
    -moz-appearance: $value;
    -ms-appearance: $value;
@@ -53,8 +48,7 @@
    appearance: $value;
 }
 
-
-@mixin touch-callout ($value) {
+@mixin touch-callout($value) {
    -webkit-touch-callout: $value;
    -webkit-user-select: $value;
    -khtml-user-select: $value;
@@ -70,36 +64,32 @@
    -moz-user-select: $value;
 }
 
-
 @mixin x-center() {
-   position:absolute;
-   left:50%;
+   position: absolute;
+   left: 50%;
    -webkit-transform: translateX(-50%);
    -ms-transform: translateX(-50%);
    transform: translateX(-50%);
 }
 
-
 @mixin y-center() {
-   position:relative;
-   top:50%;
+   position: relative;
+   top: 50%;
    -webkit-transform: translateY(-50%);
    -ms-transform: translateY(-50%);
    transform: translateY(-50%);
 }
 
-
 @mixin xy-center() {
-   position:absolute;
-   top:50%;
-   left:50%;
+   position: absolute;
+   top: 50%;
+   left: 50%;
    -webkit-transform: translate(-50%, -50%);
    -ms-transform: translate(-50%, -50%);
    transform: translate(-50%, -50%);
 }
 
-
-@mixin rem-fallback($property, $values, $base-value: $rem-base){
+@mixin rem-fallback($property, $values, $base-value: $rem-base) {
    #{$property}: #{$values}px;
    #{$property}: rem-calc($values, $base-value: $rem-base);
 }
@@ -107,8 +97,8 @@
 @mixin font-face($fontname, $fontpath) {
    @font-face {
       font-family: $fontname;
-      src:url('#{$fontpath}.eot');
-      src:url('#{$fontpath}.eot?#iefix-apoii3') format('embedded-opentype'),
+      src: url('#{$fontpath}.eot');
+      src: url('#{$fontpath}.eot?#iefix-apoii3') format('embedded-opentype'),
       url('#{$fontpath}.woff') format('woff'),
       url('#{$fontpath}.ttf') format('truetype'),
       url('#{$fontpath}.svg') format('svg');
@@ -138,7 +128,19 @@
    -moz-osx-font-smoothing: grayscale;
 }
 
+//
+// Color Management
+//------------------------------------------------------------------------
 
+@mixin linear-gradient($preset, $from, $to) {
+   background-color: $preset;
+   background-image: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
+   background-image: -webkit-linear-gradient(top, $from, $to);
+   background-image: -moz-linear-gradient(top, $from, $to);
+   background-image: -ms-linear-gradient(top, $from, $to);
+   background-image: -o-linear-gradient(top, $from, $to);
+   background-image: linear-gradient(to bottom, $from, $to);
+}
 
 //
 // Render necessary classes for mixins
