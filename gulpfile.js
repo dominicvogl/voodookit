@@ -21,31 +21,44 @@ var defaultTasks = [
 var jsFilesApp = [
 
    // Basics
-   'src/js/libs/custom/fastclick.js',
-   'src/js/libs/custom/jquery.min.js',
+   'src/js/libs/fastclick.js',
+   'src/js/libs/jquery-1.11.3.js',
+   //'src/js/libs/jquery-2.1.4.js',
    'src/js/libs/custom/modernizr.js',
 
    // Foundation Stuff
-   //'src/js/libs/foundation/foundation.js',
-   //'src/js/libs/foundation/foundation.abide.js',
-   //'src/js/libs/foundation/foundation.accordion.js',
-   //'src/js/libs/foundation/foundation.alert.js',
-   //'src/js/libs/foundation/foundation.clearing.js',
-   //'src/js/libs/foundation/foundation.dropdown.js',
-   //'src/js/libs/foundation/foundation.equalizer.js',
-   //'src/js/libs/foundation/foundation.interchange.js',
-   //'src/js/libs/foundation/foundation.joyride.js',
-   //'src/js/libs/foundation/foundation.magellan.js',
-   //'src/js/libs/foundation/foundation.offcanvas.js',
-   //'src/js/libs/foundation/foundation.orbit.js',
-   //'src/js/libs/foundation/foundation.reveal.js',
-   //'src/js/libs/foundation/foundation.slider.js',
-   //'src/js/libs/foundation/foundation.tab.js',
-   //'src/js/libs/foundation/foundation.tooltip.js',
-   //'src/js/libs/foundation/foundation.topbar.js',
+   //'src/js/foundation/foundation.core.js',
+   //'src/js/foundation/foundation.abide.js',
+   //'src/js/foundation/foundation.accordion.js',
+   //'src/js/foundation/foundation.accordionMenu.js',
+   //'src/js/foundation/foundation.drilldown.js',
+   //'src/js/foundation/foundation.dropdown.js',
+   //'src/js/foundation/foundation.dropdownMenu.js',
+   //'src/js/foundation/foundation.equalizer.js',
+   //'src/js/foundation/foundation.interchange.js',
+   //'src/js/foundation/foundation.magellan.js',
+   //'src/js/foundation/foundation.offcanvas.js',
+   //'src/js/foundation/foundation.orbit.js',
+   //'src/js/foundation/foundation.responsiveMenu.js',
+   //'src/js/foundation/foundation.responsiveToggle.js',
+   //'src/js/foundation/foundation.reveal.js',
+   //'src/js/foundation/foundation.slider.js',
+   //'src/js/foundation/foundation.sticky.js',
+   //'src/js/foundation/foundation.tabs.js',
+   //'src/js/foundation/foundation.toggler.js',
+   //'src/js/foundation/foundation.tooltip.js',
+   //'src/js/foundation/foundation.util.box.js',
+   //'src/js/foundation/foundation.util.keyboard.js',
+   //'src/js/foundation/foundation.util.mediaQuery.js',
+   //'src/js/foundation/foundation.util.motion.js',
+   //'src/js/foundation/foundation.util.nest.js',
+   //'src/js/foundation/foundation.util.timerAndImageLoader.js',
+   //'src/js/foundation/foundation.util.touch.js',
+   //'src/js/foundation/foundation.util.trigger.js',
 
    // Your Own Stuff
    'src/js/custom/custom.js'
+
 ];
 
 gulp.task('styles', stylesTask);
@@ -88,10 +101,10 @@ function stylesTask() {
    var compileStyles = function (_baseName) {
       gulp.src(['src/scss/' + _baseName + '.scss'])
          .pipe(plumber())
-         .pipe(sourcemaps.init())
-         .pipe(sass({outputStyle: 'compressed'}))
-         .pipe(rename({suffix: '.min'}))
-         .pipe(sourcemaps.write('./'))
+         //.pipe(sourcemaps.init())
+         .pipe(sass({outputStyle: 'nested'}))
+         //.pipe(rename({suffix: '.min'}))
+         //.pipe(sourcemaps.write('./'))
          .pipe(gulp.dest('./css'))
    };
 
@@ -104,9 +117,9 @@ function scriptsTask() {
          .pipe(plumber())
          .pipe(concat(targetFile + '.js'))
          .pipe(gulp.dest('js'))
-         .pipe(uglify())
-         .pipe(rename({suffix: '.min'}))
-         .pipe(gulp.dest('js'));
+         //.pipe(uglify())
+         //.pipe(rename({suffix: '.min'}))
+         //.pipe(gulp.dest('js'));
    };
 
    compileScripts(jsFilesApp, 'app');
@@ -140,4 +153,3 @@ function faviconTask() {
       }))
       .pipe(gulp.dest('assets/favicon'));
 }
-
