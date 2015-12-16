@@ -1,4 +1,5 @@
-# Foundation 5 Minimal
+# Foundation 6 Minimal
+based on Foundation 6.0.6
 
 #### Very minimal Foundation 5 Starter Kit
 
