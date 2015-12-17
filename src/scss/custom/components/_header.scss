@@ -1,0 +1,14 @@
+//
+// @file: custom/header/_header.scss
+// @author: Dominic Vogl (http://www.dominicvogl.de)
+// @date: 2015-12-16
+// @version: 1.2.0
+// -----//-----//-----//-----//-----//
+
+@mixin custom-header {
+
+	.logo {
+		margin: ($grid-column-gutter / 2) 0;
+	}
+
+}

@@ -1,13 +1,19 @@
-/**
- * Foundation for Sites by ZURB
- * Version 6.0.6
- * foundation.zurb.com
- * Licensed under MIT Open Source
- */
+//
+// @file: custom/_custom.scss
+// @author: Dominic Vogl (http://www.dominicvogl.de)
+// @date: 2015-12-16
+// @version: 1.2.0
+// -----//-----//-----//-----//-----//
 
 // Import Custom Modules
-//@import "custom/yourcomponent";
+@import "typography/fonts";
+
+@import "components/header";
+@import "components/modules";
+@import "components/lists";
 
 @mixin custom-everything {
-	//@include "yourcomponent";
+	@include custom-header;
+	@include custom-modules;
+	@include custom-lists;
 }

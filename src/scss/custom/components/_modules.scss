@@ -1,0 +1,41 @@
+//
+// @file: custom/_modules.scss
+// @author: Dominic Vogl (http://www.dominicvogl.de)
+// @date: 2015-12-16
+// @version: 1.2.0
+// -----//-----//-----//-----//-----//
+
+@mixin custom-modules {
+
+	.mod {
+		margin: {
+			top: $grid-column-gutter;
+			bottom: $grid-column-gutter;
+		}
+	}
+
+	.mod-catalogs {
+
+		img {
+			display: block;
+			margin-bottom: $grid-column-gutter / 2;
+		}
+
+		.column {
+			margin-bottom: $grid-column-gutter;
+		}
+
+	}
+
+	//@include breakpoint(medium) {
+	//
+	//	.mod {
+	//		margin: {
+	//			top: $grid-column-gutter * 2;
+	//			bottom: $grid-column-gutter * 2;
+	//		}
+	//	}
+	//
+	//}
+
+}

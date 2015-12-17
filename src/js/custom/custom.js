@@ -2,27 +2,28 @@
 // Setup jQuery Plugins
 //------------------------------------------------------------------------
 
+(function () {
+
+    $(function () {
+
+        //
+        // Modernizr I: SVG Fallback
+        //------------------------------------------------------------------------
+
+        if (!Modernizr.svg) {
+
+            $('img[src$="svg"]').attr('src', function () {
+                return $(this).attr('src').replace('.svg', '.png');
+            });
+        }
+
+    });
 
 
-$(document).ready(function() {
+    $(window).load(function () {
 
-    //
-    // Modernizr I: SVG Fallback
-    //------------------------------------------------------------------------
+        // Your awesome code
 
-    if(!Modernizr.svg) {
+    });
 
-        $('img[src$="svg"]').attr('src', function() {
-            return $(this).attr('src').replace('.svg', '.png');
-        });
-    }
-
-});
-
-
-
-$(window).load(function () {
-
-    // Your awesome code
-
-});
+})(jQuery);

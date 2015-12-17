@@ -1,0 +1,54 @@
+@font-face {
+  font-family: "icon";
+  src: url('../fonts/generated/icon.eot');
+  src: url('../fonts/generated/icon.eot?#iefix') format('eot'),
+    url('../fonts/generated/icon.woff') format('woff'),
+    url('../fonts/generated/icon.ttf') format('truetype'),
+    url('../fonts/generated/icon.svg#icon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin icon {
+   font-family:"icon";
+   display:inline-block;
+   vertical-align:middle;
+   line-height:1;
+   font-weight:normal;
+   font-style:normal;
+   speak:none;
+   text-decoration:inherit;
+   text-transform:none;
+   text-rendering:optimizeLegibility;
+   -webkit-font-smoothing:antialiased;
+   -moz-osx-font-smoothing:grayscale;
+}
+
+.icon {
+   @include icon;
+}
+
+.icon-lg {
+  font-size: 1.3333333333333333em;
+  line-height: 0.75em;
+  vertical-align: -15%;
+}
+.icon-2x { font-size: 2em; }
+.icon-3x { font-size: 3em; }
+.icon-4x { font-size: 4em; }
+.icon-5x { font-size: 5em; }
+.icon-fw {
+  width: 1.2857142857142858em;
+  text-align: center;
+}
+
+@mixin icon_file-pdf-o() {&:before { content: "\E001" }}
+
+
+@mixin icon_file-pdf-o-after() {&:after { content: "\E001" }}
+
+
+.icon-file-pdf-o { @include icon_file-pdf-o(); }
+
+
+.icon-file-pdf-o-after { @include icon_file-pdf-o-after(); }

@@ -7,7 +7,8 @@
 
 // Import Foundation
 @import "foundation/foundation";
-//@import "custom/custom";
+@import "generated/icons";
+@import "custom/custom";
 
 // Include Components
 @include foundation-everything;
