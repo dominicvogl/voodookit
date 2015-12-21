@@ -5,12 +5,14 @@
  * Licensed under MIT Open Source
  */
 
+// Sass Variables, Settings
+@import 'settings';
+
 // Sass utilities
 @import 'util/util';
 
 // Global variables and styles
 @import 'global';
-@import 'settings';
 
 // Components
 @import 'grid/grid';
