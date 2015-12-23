@@ -2,9 +2,6 @@
 gulp = require('gulp');
 var requireDir = require('require-dir');
 
-// Include other gulp modules
-requireDir('./gulp');
-
 // Base Configuration for gulp modules
 var config = [
     environment = 'fm',
@@ -66,6 +63,9 @@ var config = [
         sourcePath + 'js/custom/**/*.js'
     ]
 ];
+
+// Include other gulp modules
+requireDir(sourcePath + '/gulp');
 
 var defaultTasks = [
     'styles',
