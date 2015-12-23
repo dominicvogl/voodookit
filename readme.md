@@ -5,9 +5,16 @@ based on Foundation 6.0.x
 
 * **SASS / SCSS** will be compiled with [gulp.js](http://www.gulpjs.com) (Grunt is to slow for a great coding workflow...)
 
-#### Install
+### Install
 
-Install via Bower
+#### Get started with the project
+
+```
+npm install
+bower install
+```
+
+#### Install Project as component
 
 ```
 bower install voodookit
