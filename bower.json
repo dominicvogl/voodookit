@@ -15,6 +15,9 @@
     "js",
     "gulp"
   ],
+  "devDependencies": {
+    "foundation-sites": "~6.0.6"
+  },
   "authors": [
     "Dominic Vogl"
   ],

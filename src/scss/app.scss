@@ -6,10 +6,9 @@
 // -----//-----//-----//-----//-----//
 
 // Import Foundation
-@import "foundation/foundation";
-@import "generated/icons";
-@import "custom/custom";
+@import "../bower-components/foundation-sites/scss/foundation";
+@import "custom";
 
 // Include Components
 @include foundation-everything;
-//@include custom-everything;
+@include custom-everything;

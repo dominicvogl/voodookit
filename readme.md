@@ -4,3 +4,9 @@ based on Foundation 6.0.6
 #### Very minimal Foundation 6 Starter Kit
 
 * **SASS / SCSS** will be compiled with [gulp.js](http://www.gulpjs.com) (Grunt is to slow for a great coding workflow...)
+
+### Install
+
+Install via Bower
+
+npm install foundation-minimal

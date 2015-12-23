@@ -6,14 +6,18 @@
 // -----//-----//-----//-----//-----//
 
 // Import Custom Modules
-@import "typography/fonts";
+@import "settings";
 
-@import "components/header";
-@import "components/modules";
-@import "components/lists";
+@import "components/components";
+@import "generated/generated";
+@import "typography/typography";
+
 
 @mixin custom-everything {
-	@include custom-header;
-	@include custom-modules;
-	@include custom-lists;
+
+	// components
+	@include components-header;
+	@include components-lists;
+	@include components-modules;
+
 }
