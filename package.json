@@ -1,6 +1,6 @@
 {
-  "name": "foundation-minimal",
-  "version": "0.1.1",
+  "name": "voodookit",
+  "version": "2.0.0",
   "devDependencies": {
     "gulp": "^3.8.11",
     "gulp-autoprefixer": "^1.0.1",

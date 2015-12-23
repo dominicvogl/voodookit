@@ -1,5 +1,5 @@
 {
-  "name": "foundation-minimal",
+  "name": "voodookit",
   "description": "Foundation 6 Starter Kit",
   "main": [
     "dist/js/app.js",
@@ -16,7 +16,12 @@
     "gulp"
   ],
   "devDependencies": {
-    "foundation-sites": "~6.0.6"
+    "foundation-sites": "~6.0.6",
+    "picturefill": "~3.0.1",
+    "fastclick": "~1.0.6",
+    "SimpleStateManager": "~3.0.0",
+    "slick": "https://github.com/kenwheeler/slick.git#master",
+    "modernizr": "https://github.com/Modernizr/Modernizr.git#master"
   },
   "authors": [
     "Dominic Vogl"
@@ -29,5 +34,5 @@
     "test",
     "tests"
   ],
-  "homepage": "https://github.com/dominicvogl/foundation-minimal"
+  "homepage": "https://github.com/dominicvogl/voodookit"
 }
