@@ -12,55 +12,55 @@ var config = [
     jsFilesApp = [
 
         // Jquery
-        sourcePath + 'js/libs/jquery-2.1.4.js',
+        sourcePath + 'bower-components/jquery/dist/jquery.js',
 
         // Fastclick
-        //sourcePath + 'js/libs/fastclick.js',
+        sourcePath + 'bower-components/fastclick/lib/fastclick.js',
 
         // Modernizr
-        sourcePath + 'js/libs/modernizr.js',
+        //sourcePath + 'js/libs/modernizr.js',
 
         // Picturefill
-        //sourcePath + 'js/libs/picturefill.js',
+        sourcePath + 'bower-components/dist/picturefill.js',
 
         // Simple state manager
-        //sourcePath + 'js/libs/ssm.js',
+        // sourcePath + 'bower-components/SimpleStateManager/src/ssm.js',
 
         // Slick
-        //sourcePath + 'js/libs/slick.min.js',
+        // sourcePath + 'bower-components/slick/slick/slick.js',
 
         // Foundation
-        //sourcePath + 'src/js/foundation/foundation.core.js',
-        //sourcePath + 'src/js/foundation/foundation.util.box.js',
-        //sourcePath + 'src/js/foundation/foundation.util.keyboard.js',
-        //sourcePath + 'src/js/foundation/foundation.util.mediaQuery.js',
-        //sourcePath + 'src/js/foundation/foundation.util.motion.js',
-        //sourcePath + 'src/js/foundation/foundation.util.nest.js',
-        //sourcePath + 'src/js/foundation/foundation.util.timerAndImageLoader.js',
-        //sourcePath + 'src/js/foundation/foundation.util.touch.js',
-        //sourcePath + 'src/js/foundation/foundation.util.triggers.js',
-        //sourcePath + 'src/js/foundation/foundation.abide.js',
-        //sourcePath + 'src/js/foundation/foundation.accordion.js',
-        //sourcePath + 'src/js/foundation/foundation.accordionMenu.js',
-        //sourcePath + 'src/js/foundation/foundation.drilldown.js',
-        //sourcePath + 'src/js/foundation/foundation.dropdown.js',
-        //sourcePath + 'src/js/foundation/foundation.dropdownMenu.js',
-        //sourcePath + 'src/js/foundation/foundation.equalizer.js',
-        //sourcePath + 'src/js/foundation/foundation.interchange.js',
-        //sourcePath + 'src/js/foundation/foundation.magellan.js',
-        //sourcePath + 'src/js/foundation/foundation.offcanvas.js',
-        //sourcePath + 'src/js/foundation/foundation.orbit.js',
-        //sourcePath + 'src/js/foundation/foundation.responsiveMenu.js',
-        //sourcePath + 'src/js/foundation/foundation.responsiveToggle.js',
-        //sourcePath + 'src/js/foundation/foundation.reveal.js',
-        //sourcePath + 'src/js/foundation/foundation.slider.js',
-        //sourcePath + 'src/js/foundation/foundation.sticky.js',
-        //sourcePath + 'src/js/foundation/foundation.tabs.js',
-        //sourcePath + 'src/js/foundation/foundation.toggler.js',
-        //sourcePath + 'src/js/foundation/foundation.tooltip.js',
+        //sourcePath + 'bower-components/foundation-sites/js/foundation.core.js',
+        //sourcePath + 'bower-components/foundation-sites/js/foundation.util.box.js',
+        //sourcePath + 'bower-components/foundation-sites/js/foundation.util.keyboard.js',
+        //sourcePath + 'bower-components/foundation-sites/js/foundation.util.mediaQuery.js',
+        //sourcePath + 'bower-components/foundation-sites/js/foundation.util.motion.js',
+        //sourcePath + 'bower-components/foundation-sites/js/foundation.util.nest.js',
+        //sourcePath + 'bower-components/foundation-sites/js/foundation.util.timerAndImageLoader.js',
+        //sourcePath + 'bower-components/foundation-sites/js/foundation.util.touch.js',
+        //sourcePath + 'bower-components/foundation-sites/js/foundation.util.triggers.js',
+        //sourcePath + 'bower-components/foundation-sites/js/foundation.abide.js',
+        //sourcePath + 'bower-components/foundation-sites/js/foundation.accordion.js',
+        //sourcePath + 'bower-components/foundation-sites/js/foundation.accordionMenu.js',
+        //sourcePath + 'bower-components/foundation-sites/js/foundation.drilldown.js',
+        //sourcePath + 'bower-components/foundation-sites/js/foundation.dropdown.js',
+        //sourcePath + 'bower-components/foundation-sites/js/foundation.dropdownMenu.js',
+        //sourcePath + 'bower-components/foundation-sites/js/foundation.equalizer.js',
+        //sourcePath + 'bower-components/foundation-sites/js/foundation.interchange.js',
+        //sourcePath + 'bower-components/foundation-sites/js/foundation.magellan.js',
+        //sourcePath + 'bower-components/foundation-sites/js/foundation.offcanvas.js',
+        //sourcePath + 'bower-components/foundation-sites/js/foundation.orbit.js',
+        //sourcePath + 'bower-components/foundation-sites/js/foundation.responsiveMenu.js',
+        //sourcePath + 'bower-components/foundation-sites/js/foundation.responsiveToggle.js',
+        //sourcePath + 'bower-components/foundation-sites/js/foundation.reveal.js',
+        //sourcePath + 'bower-components/foundation-sites/js/foundation.slider.js',
+        //sourcePath + 'bower-components/foundation-sites/js/foundation.sticky.js',
+        //sourcePath + 'bower-components/foundation-sites/js/foundation.tabs.js',
+        //sourcePath + 'bower-components/foundation-sites/js/foundation.toggler.js',
+        //sourcePath + 'bower-components/foundation-sites/js/foundation.tooltip.js',
 
         // Own stuff
-        sourcePath + 'js/custom/**/*.js'
+        sourcePath + 'js/**/*.js'
     ]
 ];
 
