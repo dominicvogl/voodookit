@@ -42,13 +42,17 @@
   text-align: center;
 }
 
-@mixin icon_file-pdf-o() {&:before { content: "\E001" }}
+@mixin icon_empire() {&:before { content: "\E001" }}
+@mixin icon_rebel() {&:before { content: "\E002" }}
 
 
-@mixin icon_file-pdf-o-after() {&:after { content: "\E001" }}
+@mixin icon_empire-after() {&:after { content: "\E001" }}
+@mixin icon_rebel-after() {&:after { content: "\E002" }}
 
 
-.icon-file-pdf-o { @include icon_file-pdf-o(); }
+.icon-empire { @include icon_empire(); }
+.icon-rebel { @include icon_rebel(); }
 
 
-.icon-file-pdf-o-after { @include icon_file-pdf-o-after(); }
+.icon-empire-after { @include icon_empire-after(); }
+.icon-rebel-after { @include icon_rebel-after(); }

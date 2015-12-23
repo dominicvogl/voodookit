@@ -1,23 +1,24 @@
 {
-   "name": "foundation-minimal",
-   "version": "0.1.1",
-   "devDependencies": {
-      "gulp": "^3.8.11",
-      "gulp-autoprefixer": "^1.0.1",
-      "gulp-cli": "^0.2.0",
-      "gulp-concat": "^2.2.0",
-      "gulp-consolidate": "^0.1.2",
-      "gulp-favicons": "^1.0.9",
-      "gulp-iconfont": "^1.0.0",
-      "gulp-plumber": "^0.6.3",
-      "gulp-rename": "^1.2.0",
-      "gulp-sass": "^2.0.3",
-      "gulp-sourcemaps": "^1.6.0",
-      "gulp-uglify": "^0.3.1",
-      "gulp-watch": "^0.6.8",
-      "lodash": "^3.10.0"
-   },
-   "dependencies": {
-      "path": "^0.11.14"
-   }
+  "name": "foundation-minimal",
+  "version": "0.1.1",
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^1.0.1",
+    "gulp-cli": "^0.2.0",
+    "gulp-concat": "^2.2.0",
+    "gulp-consolidate": "^0.1.2",
+    "gulp-favicons": "^1.0.9",
+    "gulp-iconfont": "^1.0.0",
+    "gulp-plumber": "^0.6.3",
+    "gulp-rename": "^1.2.0",
+    "gulp-sass": "^2.0.3",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^0.3.1",
+    "gulp-watch": "^0.6.8",
+    "lodash": "^3.10.0",
+    "require-dir": "^0.3.0"
+  },
+  "dependencies": {
+    "path": "^0.11.14"
+  }
 }
