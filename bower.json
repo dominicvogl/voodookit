@@ -1,0 +1,30 @@
+{
+  "name": "foundation-minimal",
+  "description": "Foundation 6 Starter Kit",
+  "main": [
+    "dist/js/app.js",
+    "dist/css/app.scss"
+  ],
+  "moduleType": [
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "foundation",
+    "sass",
+    "js",
+    "gulp"
+  ],
+  "authors": [
+    "Dominic Vogl"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "homepage": "https://github.com/dominicvogl/foundation-minimal"
+}
