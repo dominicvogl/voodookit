@@ -19,11 +19,4 @@
 
     });
 
-
-    $(window).load(function () {
-
-        // Your awesome code
-
-    });
-
 })(jQuery);
