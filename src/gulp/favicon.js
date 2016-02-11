@@ -1,9 +1,10 @@
 var favicons = require('gulp-favicons');
+var gutil = require("gutil");
 
 gulp.task('favicon', faviconTask);
 
 function faviconTask() {
-    gulp.src([sourcePath + 'assets/favicon/favicon.png'])
+    return gulp.src([sourcePath + 'assets/favicon/favicon.png'])
         .pipe(favicons({
             files: {
                 src: sourcePath + 'assets/favicon/favicon.png',
@@ -28,5 +29,6 @@ function faviconTask() {
                 background: false
             }
         }))
+        .on("error", gutil.log)
         .pipe(gulp.dest(destinationPath + 'assets/favicon'));
 }
