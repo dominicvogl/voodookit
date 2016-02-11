@@ -2,21 +2,21 @@
 // Setup jQuery Plugins
 //------------------------------------------------------------------------
 
-(function () {
+(function ($) {
 
-    $(function () {
+    'use strict';
 
-        //
-        // Modernizr I: SVG Fallback
-        //------------------------------------------------------------------------
+    // $(document).ready(function() {
 
-        if (!Modernizr.svg) {
+    if (!Modernizr.svg) {
 
-            $('img[src$="svg"]').attr('src', function () {
-                return $(this).attr('src').replace('.svg', '.png');
-            });
-        }
+        console.log('SVG Support: ' + Modernizr.svg);
 
-    });
+        $('img[src$="svg"]').attr('src', function () {
+            return $(this).attr('src').replace('.svg', '.png');
+        });
+    }
+
+    // });
 
 })(jQuery);
