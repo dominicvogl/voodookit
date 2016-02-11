@@ -17,11 +17,8 @@ var config = [
         // Fastclick
         sourcePath + 'bower-components/fastclick/lib/fastclick.js',
 
-        // Modernizr
-        //sourcePath + 'js/libs/modernizr.js',
-
         // Picturefill
-        sourcePath + 'bower-components/dist/picturefill.js',
+        // sourcePath + 'bower-components/dist/picturefill.js',
 
         // Simple state manager
         // sourcePath + 'bower-components/SimpleStateManager/src/ssm.js',
@@ -60,7 +57,8 @@ var config = [
         //sourcePath + 'bower-components/foundation-sites/js/foundation.tooltip.js',
 
         // Own stuff
-        sourcePath + 'js/**/*.js'
+        sourcePath + 'js/modernizr/modernizr.js',
+        sourcePath + 'js/modernizr/setup.js'
     ]
 ];
 
