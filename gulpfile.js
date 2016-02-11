@@ -58,7 +58,9 @@ var config = [
 
         // Own stuff
         sourcePath + 'js/modernizr/modernizr.js',
-        sourcePath + 'js/modernizr/setup.js'
+        sourcePath + 'js/modernizr/setup.js',
+
+        sourcePath + 'js/ajax/load.js'
     ]
 ];
 
