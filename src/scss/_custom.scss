@@ -6,12 +6,9 @@
 // -----//-----//-----//-----//-----//
 
 // Import Custom Modules
-@import "settings";
-
 @import "components/components";
 @import "generated/generated";
 @import "typography/typography";
-
 
 @mixin custom-everything {
 

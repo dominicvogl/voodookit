@@ -5,8 +5,13 @@
 // @version: 1.2.0
 // -----//-----//-----//-----//-----//
 
+// Import Settings
+@import "settings";
+
 // Import Foundation
 @import "../bower-components/foundation-sites/scss/foundation";
+
+// Import Custom components
 @import "custom";
 
 // Include Components

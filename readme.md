@@ -1,5 +1,5 @@
 # Foundation 6 Minimal
-based on Foundation 6.0.x
+based on Foundation 6.0.x (latest Version via Bower)
 
 #### Very minimal Foundation 6 Starter Kit for your next awesome Web Project
 
