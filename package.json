@@ -9,6 +9,7 @@
     "gulp-consolidate": "^0.1.2",
     "gulp-favicons": "^1.0.9",
     "gulp-iconfont": "^1.0.0",
+    "gulp-jade": "^1.1.0",
     "gulp-plumber": "^0.6.3",
     "gulp-rename": "^1.2.0",
     "gulp-sass": "^2.0.3",

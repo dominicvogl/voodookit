@@ -70,6 +70,7 @@ requireDir(sourcePath + '/gulp');
 var defaultTasks = [
     'styles',
     'scripts',
+    'jade',
     'watch'
 ];
 
