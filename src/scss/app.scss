@@ -1,19 +1,19 @@
 //
 // @file: app.scss
 // @author: Dominic Vogl (http://www.dominicvogl.de)
-// @date: 2015-12-16
-// @version: 1.2.0
+// @date: 2016-03-11
+// @version: 1.3.1
 // -----//-----//-----//-----//-----//
 
-// Import Settings
-@import "settings";
+// Import global settings
+@import "settings/settings";
 
 // Import Foundation
 @import "../bower-components/foundation-sites/scss/foundation";
 
-// Import Custom components
-@import "custom";
+// Import Voodookit
+@import "voodookit";
 
-// Include Components
+// Include components
 @include foundation-everything;
-@include custom-everything;
+@include voodookit-everything
