@@ -604,8 +604,15 @@ button {
 }
 
 .row .row {
-  margin-left: -0.9375rem;
-  margin-right: -0.9375rem;
+  margin-left: -0.625rem;
+  margin-right: -0.625rem;
+}
+
+@media screen and (min-width: 40em) {
+  .row .row {
+    margin-left: -0.9375rem;
+    margin-right: -0.9375rem;
+  }
 }
 
 .row .row.collapse {
@@ -625,8 +632,15 @@ button {
 .column, .columns {
   width: 100%;
   float: left;
-  padding-left: 0.9375rem;
-  padding-right: 0.9375rem;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+}
+
+@media screen and (min-width: 40em) {
+  .column, .columns {
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
+  }
 }
 
 .column:last-child:not(:first-child), .columns:last-child:not(:first-child) {
@@ -956,6 +970,40 @@ button {
   float: left;
 }
 
+.small-up-7 > .column, .small-up-7 > .columns {
+  width: 14.28571%;
+  float: left;
+}
+
+.small-up-7 > .column:nth-of-type(1n), .small-up-7 > .columns:nth-of-type(1n) {
+  clear: none;
+}
+
+.small-up-7 > .column:nth-of-type(7n+1), .small-up-7 > .columns:nth-of-type(7n+1) {
+  clear: both;
+}
+
+.small-up-7 > .column:last-child, .small-up-7 > .columns:last-child {
+  float: left;
+}
+
+.small-up-8 > .column, .small-up-8 > .columns {
+  width: 12.5%;
+  float: left;
+}
+
+.small-up-8 > .column:nth-of-type(1n), .small-up-8 > .columns:nth-of-type(1n) {
+  clear: none;
+}
+
+.small-up-8 > .column:nth-of-type(8n+1), .small-up-8 > .columns:nth-of-type(8n+1) {
+  clear: both;
+}
+
+.small-up-8 > .column:last-child, .small-up-8 > .columns:last-child {
+  float: left;
+}
+
 .small-collapse > .column, .small-collapse > .columns {
   padding-left: 0;
   padding-right: 0;
@@ -967,8 +1015,8 @@ button {
 }
 
 .small-uncollapse > .column, .small-uncollapse > .columns {
-  padding-left: 0.9375rem;
-  padding-right: 0.9375rem;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
 }
 
 .small-centered {
@@ -1223,6 +1271,32 @@ button {
     clear: both;
   }
   .medium-up-6 > .column:last-child, .medium-up-6 > .columns:last-child {
+    float: left;
+  }
+  .medium-up-7 > .column, .medium-up-7 > .columns {
+    width: 14.28571%;
+    float: left;
+  }
+  .medium-up-7 > .column:nth-of-type(1n), .medium-up-7 > .columns:nth-of-type(1n) {
+    clear: none;
+  }
+  .medium-up-7 > .column:nth-of-type(7n+1), .medium-up-7 > .columns:nth-of-type(7n+1) {
+    clear: both;
+  }
+  .medium-up-7 > .column:last-child, .medium-up-7 > .columns:last-child {
+    float: left;
+  }
+  .medium-up-8 > .column, .medium-up-8 > .columns {
+    width: 12.5%;
+    float: left;
+  }
+  .medium-up-8 > .column:nth-of-type(1n), .medium-up-8 > .columns:nth-of-type(1n) {
+    clear: none;
+  }
+  .medium-up-8 > .column:nth-of-type(8n+1), .medium-up-8 > .columns:nth-of-type(8n+1) {
+    clear: both;
+  }
+  .medium-up-8 > .column:last-child, .medium-up-8 > .columns:last-child {
     float: left;
   }
   .medium-collapse > .column, .medium-collapse > .columns {
@@ -1491,6 +1565,32 @@ button {
   .large-up-6 > .column:last-child, .large-up-6 > .columns:last-child {
     float: left;
   }
+  .large-up-7 > .column, .large-up-7 > .columns {
+    width: 14.28571%;
+    float: left;
+  }
+  .large-up-7 > .column:nth-of-type(1n), .large-up-7 > .columns:nth-of-type(1n) {
+    clear: none;
+  }
+  .large-up-7 > .column:nth-of-type(7n+1), .large-up-7 > .columns:nth-of-type(7n+1) {
+    clear: both;
+  }
+  .large-up-7 > .column:last-child, .large-up-7 > .columns:last-child {
+    float: left;
+  }
+  .large-up-8 > .column, .large-up-8 > .columns {
+    width: 12.5%;
+    float: left;
+  }
+  .large-up-8 > .column:nth-of-type(1n), .large-up-8 > .columns:nth-of-type(1n) {
+    clear: none;
+  }
+  .large-up-8 > .column:nth-of-type(8n+1), .large-up-8 > .columns:nth-of-type(8n+1) {
+    clear: both;
+  }
+  .large-up-8 > .column:last-child, .large-up-8 > .columns:last-child {
+    float: left;
+  }
   .large-collapse > .column, .large-collapse > .columns {
     padding-left: 0;
     padding-right: 0;
@@ -1637,14 +1737,14 @@ h6 {
 }
 
 a {
-  color: #0098aa;
+  color: #2199e8;
   text-decoration: none;
   line-height: inherit;
   cursor: pointer;
 }
 
 a:hover, a:focus {
-  color: #008392;
+  color: #1585cf;
 }
 
 a img {
@@ -1905,7 +2005,7 @@ textarea {
   margin: 0 0 1rem;
   font-family: inherit;
   font-size: 1rem;
-  color: #8a8a8a;
+  color: #0a0a0a;
   background-color: #fefefe;
   box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
   border-radius: 0;
@@ -1996,7 +2096,7 @@ label.middle {
   margin-top: -0.5rem;
   font-size: 0.8125rem;
   font-style: italic;
-  color: #333;
+  color: #0a0a0a;
 }
 
 .input-group {
@@ -2093,12 +2193,12 @@ select {
   font-size: 1rem;
   font-family: inherit;
   line-height: normal;
-  color: #8a8a8a;
-  background-color: #fafafa;
+  color: #0a0a0a;
+  background-color: #fefefe;
   border-radius: 0;
   -webkit-appearance: none;
   -moz-appearance: none;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="32" height="24" viewBox="0 0 32 24"><polygon points="0,0 32,0 16,24" style="fill: rgb%2851, 51, 51%29"></polygon></svg>');
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="32" height="24" viewBox="0 0 32 24"><polygon points="0,0 32,0 16,24" style="fill: rgb%28138, 138, 138%29"></polygon></svg>');
   background-size: 9px 6px;
   background-position: right center;
   background-origin: content-box;
@@ -2157,10 +2257,10 @@ select[multiple] {
   border: 1px solid transparent;
   border-radius: 0;
   padding: 0.85em 1em;
-  margin: 0 1rem 1rem 0;
+  margin: 0 0 1rem 0;
   font-size: 0.9rem;
-  background-color: #0098aa;
-  color: #fff;
+  background-color: #2199e8;
+  color: #fefefe;
 }
 
 [data-whatinput='mouse'] .button {
@@ -2168,8 +2268,8 @@ select[multiple] {
 }
 
 .button:hover, .button:focus {
-  background-color: #008190;
-  color: #fff;
+  background-color: #1583cc;
+  color: #fefefe;
 }
 
 .button.tiny {
@@ -2193,52 +2293,52 @@ select[multiple] {
 
 .button.primary {
   background-color: #2199e8;
-  color: #fff;
+  color: #fefefe;
 }
 
 .button.primary:hover, .button.primary:focus {
   background-color: #147cc0;
-  color: #fff;
+  color: #fefefe;
 }
 
 .button.secondary {
   background-color: #777;
-  color: #fff;
+  color: #fefefe;
 }
 
 .button.secondary:hover, .button.secondary:focus {
   background-color: #5f5f5f;
-  color: #fff;
+  color: #fefefe;
 }
 
 .button.success {
   background-color: #3adb76;
-  color: #fff;
+  color: #fefefe;
 }
 
 .button.success:hover, .button.success:focus {
   background-color: #22bb5b;
-  color: #fff;
+  color: #fefefe;
 }
 
 .button.warning {
   background-color: #ffae00;
-  color: #fff;
+  color: #fefefe;
 }
 
 .button.warning:hover, .button.warning:focus {
   background-color: #cc8b00;
-  color: #fff;
+  color: #fefefe;
 }
 
 .button.alert {
   background-color: #ec5840;
-  color: #fff;
+  color: #fefefe;
 }
 
 .button.alert:hover, .button.alert:focus {
   background-color: #da3116;
-  color: #fff;
+  color: #fefefe;
 }
 
 .button.hollow {
@@ -2347,7 +2447,7 @@ select[multiple] {
   padding: 1.25rem 1rem;
   line-height: 1;
   font-size: 0.75rem;
-  color: #0098aa;
+  color: #2199e8;
   position: relative;
   border-bottom: 1px solid #e6e6e6;
 }
@@ -2406,7 +2506,7 @@ select[multiple] {
   font-size: 0.6rem;
   text-align: center;
   border-radius: 50%;
-  background: #0098aa;
+  background: #2199e8;
   color: #fefefe;
 }
 
@@ -2464,7 +2564,7 @@ select[multiple] {
 }
 
 .breadcrumbs a {
-  color: #0098aa;
+  color: #2199e8;
 }
 
 .breadcrumbs a:hover {
@@ -2971,7 +3071,7 @@ select[multiple] {
   border: 1px solid #cacaca;
   border-radius: 0;
   display: block;
-  font-size: 16rem;
+  font-size: 1rem;
   padding: 1rem;
   position: absolute;
   visibility: hidden;
@@ -3018,7 +3118,7 @@ select[multiple] {
   width: 0;
   height: 0;
   border: inset 5px;
-  border-color: #0098aa transparent transparent;
+  border-color: #2199e8 transparent transparent;
   border-top-style: solid;
   border-bottom-width: 0;
   right: 5px;
@@ -3058,7 +3158,7 @@ select[multiple] {
   width: 0;
   height: 0;
   border: inset 5px;
-  border-color: transparent #0098aa transparent transparent;
+  border-color: transparent #2199e8 transparent transparent;
   border-right-style: solid;
   border-left-width: 0;
 }
@@ -3069,7 +3169,7 @@ select[multiple] {
   width: 0;
   height: 0;
   border: inset 5px;
-  border-color: transparent transparent transparent #0098aa;
+  border-color: transparent transparent transparent #2199e8;
   border-left-style: solid;
   border-right-width: 0;
 }
@@ -3095,7 +3195,7 @@ select[multiple] {
     width: 0;
     height: 0;
     border: inset 5px;
-    border-color: #0098aa transparent transparent;
+    border-color: #2199e8 transparent transparent;
     border-top-style: solid;
     border-bottom-width: 0;
     right: 5px;
@@ -3122,7 +3222,7 @@ select[multiple] {
     width: 0;
     height: 0;
     border: inset 5px;
-    border-color: transparent #0098aa transparent transparent;
+    border-color: transparent #2199e8 transparent transparent;
     border-right-style: solid;
     border-left-width: 0;
   }
@@ -3132,7 +3232,7 @@ select[multiple] {
     width: 0;
     height: 0;
     border: inset 5px;
-    border-color: transparent transparent transparent #0098aa;
+    border-color: transparent transparent transparent #2199e8;
     border-left-style: solid;
     border-right-width: 0;
   }
@@ -3159,7 +3259,7 @@ select[multiple] {
     width: 0;
     height: 0;
     border: inset 5px;
-    border-color: #0098aa transparent transparent;
+    border-color: #2199e8 transparent transparent;
     border-top-style: solid;
     border-bottom-width: 0;
     right: 5px;
@@ -3186,7 +3286,7 @@ select[multiple] {
     width: 0;
     height: 0;
     border: inset 5px;
-    border-color: transparent #0098aa transparent transparent;
+    border-color: transparent #2199e8 transparent transparent;
     border-right-style: solid;
     border-left-width: 0;
   }
@@ -3196,7 +3296,7 @@ select[multiple] {
     width: 0;
     height: 0;
     border: inset 5px;
-    border-color: transparent transparent transparent #0098aa;
+    border-color: transparent transparent transparent #2199e8;
     border-left-style: solid;
     border-right-width: 0;
   }
@@ -3259,7 +3359,7 @@ select[multiple] {
   width: 0;
   height: 0;
   border: inset 5px;
-  border-color: transparent #0098aa transparent transparent;
+  border-color: transparent #2199e8 transparent transparent;
   border-right-style: solid;
   border-left-width: 0;
 }
@@ -3270,7 +3370,7 @@ select[multiple] {
   width: 0;
   height: 0;
   border: inset 5px;
-  border-color: transparent transparent transparent #0098aa;
+  border-color: transparent transparent transparent #2199e8;
   border-left-style: solid;
   border-right-width: 0;
 }
@@ -3322,7 +3422,7 @@ select[multiple] {
   white-space: nowrap;
   cursor: default;
   border-radius: 0;
-  background: #0098aa;
+  background: #2199e8;
   color: #fefefe;
 }
 
@@ -3653,7 +3753,7 @@ body {
 
 .pagination .current {
   padding: 0.1875rem 0.625rem;
-  background: #0098aa;
+  background: #2199e8;
   color: #fefefe;
   cursor: default;
 }
@@ -3720,7 +3820,7 @@ body {
   display: block;
   width: 0%;
   height: 100%;
-  background-color: #0098aa;
+  background-color: #2199e8;
 }
 
 .progress-meter-text {
@@ -3772,7 +3872,7 @@ body {
   display: inline-block;
   width: 1.4rem;
   height: 1.4rem;
-  background-color: #0098aa;
+  background-color: #2199e8;
   transition: all 0.2s ease-in-out;
   touch-action: manipulation;
   border-radius: 0;
@@ -3783,7 +3883,7 @@ body {
 }
 
 .slider-handle:hover {
-  background-color: #008190;
+  background-color: #1583cc;
 }
 
 .slider-handle.is-dragging {
@@ -4018,7 +4118,7 @@ input + .switch-paddle {
 }
 
 input:checked ~ .switch-paddle {
-  background: #0098aa;
+  background: #2199e8;
 }
 
 input:checked ~ .switch-paddle::after {
@@ -4279,7 +4379,7 @@ table.hover tr:nth-of-type(even):hover {
 }
 
 .thumbnail:hover, .thumbnail:focus {
-  box-shadow: 0 0 6px 1px rgba(0, 152, 170, 0.5);
+  box-shadow: 0 0 6px 1px rgba(33, 153, 232, 0.5);
 }
 
 .title-bar {
@@ -4441,7 +4541,7 @@ table.hover tr:nth-of-type(even):hover {
 
 .top-bar,
 .top-bar ul {
-  background-color: #eee;
+  background-color: #e6e6e6;
 }
 
 .top-bar input {
@@ -4650,4 +4750,9 @@ table.hover tr:nth-of-type(even):hover {
 
 .clearfix::after {
   clear: both;
+}
+
+.mod {
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
