@@ -21,7 +21,8 @@
     "fastclick": "latest",
     "SimpleStateManager": "latest",
     "slick": "https://github.com/kenwheeler/slick.git#master",
-    "modernizr": "https://github.com/Modernizr/Modernizr.git#master"
+    "modernizr": "https://github.com/Modernizr/Modernizr.git#master",
+    "family.scss": "^1.0.4"
   },
   "authors": [
     "Dominic Vogl"
