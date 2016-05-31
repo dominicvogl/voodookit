@@ -12,6 +12,10 @@
 // Import typography
 @import "typography/fonts";
 
+// Import family.scss
+// https://github.com/LukyVj/family.scss
+@import "../bower-components/family.scss/source/src/family";
+
 // Import mods
 @import "modules/basics";
 @import "modules/header";
