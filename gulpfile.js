@@ -11,11 +11,11 @@ var config = [
     // JS Filelist for concatinating
     jsFilesApp = [
 
-        // Jquery
-        sourcePath + 'bower-components/jquery/dist/jquery.js',
-
         // Fastclick
         sourcePath + 'bower-components/fastclick/lib/fastclick.js',
+
+        // Jquery
+        sourcePath + 'bower-components/jquery/dist/jquery.js',
 
         // Picturefill
         // sourcePath + 'bower-components/dist/picturefill.js',
@@ -57,10 +57,9 @@ var config = [
         //sourcePath + 'bower-components/foundation-sites/js/foundation.tooltip.js',
 
         // Own stuff
-        sourcePath + 'js/modernizr/modernizr.js',
-        sourcePath + 'js/modernizr/setup.js',
+        sourcePath + 'js/brwsrs/brwsrs.js'
 
-        sourcePath + 'js/ajax/load.js'
+        // sourcePath + 'js/ajax/load.js'
     ]
 ];
 
