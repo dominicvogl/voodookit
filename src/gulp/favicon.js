@@ -29,6 +29,5 @@ function faviconTask() {
                 background: false
             }
         }))
-        .on("error", gutil.log)
         .pipe(gulp.dest(destinationPath + 'assets/favicon'));
 }
