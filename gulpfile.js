@@ -58,8 +58,6 @@ var config = [
 
         // Own stuff
         sourcePath + 'js/brwsrs/brwsrs.js'
-
-        // sourcePath + 'js/ajax/load.js'
     ]
 ];
 
