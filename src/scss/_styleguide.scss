@@ -1,0 +1,5 @@
+$heading-space: map_get($grid-column-gutter, small) * 3 ! default;
+
+.voo-title {
+	margin-top: $heading-space;
+}
