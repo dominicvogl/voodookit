@@ -1,14 +1,16 @@
 /*
 // Feature Detection Script
 // @file: brwsrs.js
-// @author: Dominic Vogl [Sigikid]
+// @author: Dominic Vogl
 // @date: 2016-06-09
-// @version: 1.6.0
+// @version: 1.0
 // -----//-----//-----//-----//-----*/
 
 // define html element
 var html = $('html');
 html.removeClass('no-js').addClass('js');
+
+// @todo Remove jquery stuff, use vanilla js
 
 if(supports('svg')){
 
