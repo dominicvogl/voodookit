@@ -113,6 +113,57 @@
   margin-top: 60px;
 }
 
+.voo-colors {
+  border: 1px solid rgba(10, 10, 10, 0.25);
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.voo-colors .pattern {
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.voo-colors .pattern.primary {
+  background-color: #2199e8;
+}
+
+.voo-colors .pattern.secondary {
+  background-color: #777;
+}
+
+.voo-colors .pattern.success {
+  background-color: #3adb76;
+}
+
+.voo-colors .pattern.warning {
+  background-color: #ffae00;
+}
+
+.voo-colors .pattern.alert {
+  background-color: #ec5840;
+}
+
+.voo-colors .pattern.dark-gray {
+  background-color: #8a8a8a;
+}
+
+.voo-colors .pattern.light-gray {
+  background-color: #e6e6e6;
+}
+
+.voo-colors .pattern.medium-gray {
+  background-color: #cacaca;
+}
+
+.voo-colors .pattern.white {
+  background-color: #fefefe;
+}
+
+.voo-colors .pattern.black {
+  background-color: #0a0a0a;
+}
+
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
    * 1. Set default font family to sans-serif.

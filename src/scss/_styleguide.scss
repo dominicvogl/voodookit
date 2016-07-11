@@ -1,5 +1,60 @@
-$heading-space: map_get($grid-column-gutter, small) * 3 ! default;
+$voo-heading-space: map_get($grid-column-gutter, small) * 3 !default;
+$voo-space: map_get($grid-column-gutter, small) * 0.5;
+$voo-pattern-height: 100px !default;
+$voo-border: $callout-border !default;
 
 .voo-title {
-	margin-top: $heading-space;
+	margin-top: $voo-heading-space;
+}
+
+.voo-colors {
+	border: $voo-border;
+	padding: 5px;
+	margin-bottom: $voo-space;
+
+	.pattern {
+		height: $voo-pattern-height;
+		margin-bottom: $voo-space;
+
+		&.primary {
+			background-color: $primary-color;
+		}
+
+		&.secondary {
+			background-color: $secondary-color;
+		}
+
+		&.success {
+			background-color: $success-color;
+		}
+
+		&.warning {
+			background-color: $warning-color;
+		}
+
+		&.alert {
+			background-color: $alert-color;
+		}
+
+		&.dark-gray {
+			background-color: $dark-gray;
+		}
+
+		&.light-gray {
+			background-color: $light-gray;
+		}
+
+		&.medium-gray {
+			background-color: $medium-gray;
+		}
+
+		&.white {
+			background-color: $white;
+		}
+
+		&.black {
+			background-color: $black;
+		}
+	}
+
 }
