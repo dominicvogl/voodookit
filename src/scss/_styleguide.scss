@@ -1,12 +1,16 @@
+$secondary-font: $secondary-font-family !default;
+
 $voo-heading-space: map_get($grid-column-gutter, small) * 3 !default;
 $voo-space: map_get($grid-column-gutter, small) * 0.5;
 $voo-pattern-height: 100px !default;
 $voo-border: $callout-border !default;
 
+// Set title Styles
 .voo-title {
 	margin-top: $voo-heading-space;
 }
 
+// Set colors for  color patterns
 .voo-colors {
 	border: $voo-border;
 	padding: 5px;
@@ -57,4 +61,8 @@ $voo-border: $callout-border !default;
 		}
 	}
 
+}
+
+.secondary-font {
+	font-family: $secondary-font;
 }

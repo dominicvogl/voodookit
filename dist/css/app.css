@@ -164,6 +164,10 @@
   background-color: #0a0a0a;
 }
 
+.secondary-font {
+  font-family: "Courier New", serif;
+}
+
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
    * 1. Set default font family to sans-serif.
@@ -1731,7 +1735,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "Courier New", serif;
   font-weight: normal;
   font-style: normal;
   color: inherit;
