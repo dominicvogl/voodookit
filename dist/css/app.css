@@ -110,7 +110,10 @@
 }
 
 .voo-title {
-  margin-top: 60px;
+  margin-top: 30px;
+  margin-bottom: 18px;
+  padding-bottom: 0.3em;
+  border-bottom: 2px solid #cacaca;
 }
 
 .voo-colors {
@@ -166,6 +169,13 @@
 
 .secondary-font {
   font-family: "Georgia", "Courier New", serif;
+}
+
+@media screen and (min-width: 40em) {
+  .voo-title {
+    margin-top: 60px;
+    margin-bottom: 30px;
+  }
 }
 
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
