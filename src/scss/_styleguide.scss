@@ -6,7 +6,7 @@ $voo-pattern-height: 100px !default;
 $voo-border: $callout-border !default;
 
 // Set title Styles
-.voo-title {
+.#{$global-namespace}-title {
 	margin: {
 		top: $voo-heading-space * 0.5;
 		bottom: $voo-heading-space * 0.3;
@@ -16,7 +16,7 @@ $voo-border: $callout-border !default;
 }
 
 // Set colors for  color patterns
-.voo-colors {
+.#{$global-namespace}-colors {
 	border: $voo-border;
 	padding: 5px;
 	margin-bottom: $voo-space;
@@ -74,7 +74,7 @@ $voo-border: $callout-border !default;
 
 @include breakpoint(medium) {
 
-	.voo-title {
+	.#{$global-namespace}-title {
 		margin: {
 			top: $voo-heading-space;
 			bottom: $voo-heading-space * 0.5;
