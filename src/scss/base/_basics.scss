@@ -6,14 +6,10 @@
 // Define Basic Vars
 $basic-mod-margin: map_get($grid-column-gutter, medium);
 
-@mixin mod-basics {
+@mixin base-basics {
 
-	// Basic mod styles
-	.mod {
-		margin: {
-			top: $basic-mod-margin;
-			bottom: $basic-mod-margin
-		}
+	* {
+		outline: none;
 	}
 	
 }

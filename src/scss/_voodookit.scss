@@ -18,8 +18,11 @@ $global-namespace: "voo";
 // https://github.com/LukyVj/family.scss
 @import "../bower-components/family.scss/source/src/family";
 
-// Import mods
-@import "modules/basics";
+// Base
+@import "base/forms";
+
+// Modules
+@import "base/basics";
 @import "modules/header";
 
 // Special styleguide styles
@@ -27,8 +30,11 @@ $global-namespace: "voo";
 
 @mixin voodookit-everything {
 
+	// Base
+	@include base-forms;
+	@include base-basics;
+
 	// components
 	@include mod-header;
-	@include mod-basics;
 
 }

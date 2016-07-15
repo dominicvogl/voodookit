@@ -2642,7 +2642,10 @@ select[multiple] {
   }
 }
 
-.mod {
-  margin-top: 30px;
-  margin-bottom: 30px;
+textarea {
+  min-height: 6em;
+}
+
+* {
+  outline: none;
 }
