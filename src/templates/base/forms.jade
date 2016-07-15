@@ -1,7 +1,52 @@
 h4.voo-title
 
 form
+    h5 Text inputs
     label Input field
         input(type="text")
-    label Input field
-        input(type="text")
+
+    label Input field with placeholder
+        input(type="text", placeholder="Here is your Placeholder content")
+
+    h5 Password Inputs
+    label Password field
+        input(type="password")
+
+    h5 Textarea
+    label What books did you read over summer break?
+        textarea(placeholder="none")
+
+    h5 Select Menu
+    label Choose your stuff
+        select
+            option(value="husker") Husker
+            option(value="starbuck") Starbuck
+            option(value="hotdog") Burger
+            option(value="apollo") Apollo
+
+    label Choose multiple stuff
+        select(multiple)
+            option(value="husker") Husker
+            option(value="starbuck") Starbuck
+            option(value="hotdog") Burger
+            option(value="apollo") Apollo
+
+    fieldset
+        input(type="radio", name="pokemon", id="pokemonRed", required)
+        label(for="pokemonRed") Red
+
+        input(type="radio", name="pokemon", id="pokemonGreen")
+        label(for="pokemonGreen") Green
+
+        input(type="radio", name="pokemon", id="pokemonYellow")
+        label(for="pokemonYellow") Yellow
+
+    fieldset
+        input(type="checkbox", name="trainer", id="check1")
+        label(for="check1") Checkbox 1
+
+        input(type="checkbox", name="trainer", id="check2")
+        label(for="check2") Checkbox 2
+
+        input(type="checkbox", name="trainer", id="check3")
+        label(for="check3") Checkbox 3
