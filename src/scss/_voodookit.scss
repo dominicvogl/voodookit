@@ -18,6 +18,9 @@ $global-namespace: "voo";
 // https://github.com/LukyVj/family.scss
 @import "../bower-components/family.scss/source/src/family";
 
+// Import OWL Slider
+@import "../bower-components/owl.carousel/src/scss/owl.carousel";
+
 // Base
 @import "base/forms";
 

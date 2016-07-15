@@ -23,6 +23,10 @@ var config = [
         // Simple state manager
         // sourcePath + 'bower-components/SimpleStateManager/src/ssm.js',
 
+        // Owl
+        sourcePath + 'bower-components/owl.carousel/dist/owl.carousel.js',
+        sourcePath + 'js/slider/owl.js',
+
         // Slick
         // sourcePath + 'bower-components/slick/slick/slick.js',
 
