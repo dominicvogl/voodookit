@@ -4,6 +4,7 @@
 
         var slickDefaultOptions = {
             // lazyLoad: 'ondemand',
+            dots: true,
             prevArrow: '<div class="slick-arrow slick-prev"><span class="icon icon-empire"></span></div>',
             nextArrow: '<div class="slick-arrow slick-next"><span class="icon icon-rebel"></span></div>'
         };
@@ -15,7 +16,6 @@
             var _ = $(this);
             var options = {
                 infinite: true,
-                dots: true,
                 slidesToShow: 1,
                 slidesToScroll: 1
             };
