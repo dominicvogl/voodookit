@@ -32,7 +32,7 @@
             };
 
             $.extend(options, slickOptions);
-            
+
             _.slick(options);
 
         })

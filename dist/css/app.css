@@ -2752,3 +2752,43 @@ textarea {
 * {
   outline: none;
 }
+
+.slick-arrow {
+  background: #777;
+  font-size: 1.2em;
+  z-index: 1;
+  padding: 0.3em;
+  position: absolute;
+  top: 50%;
+  line-height: 1em;
+  -webkit-border-radius: 50px;
+  -khtml-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  border-radius: 50px;
+  -webkit-transform: translate3d(0, -50%, 0);
+  -moz-transform: translate3d(0, -50%, 0);
+  -ms-transform: translate3d(0, -50%, 0);
+  -o-transform: translate3d(0, -50%, 0);
+  transform: translate3d(0, -50%, 0);
+}
+
+.no-touch .slick-arrow:hover {
+  cursor: pointer;
+  background-color: #9d9d9d;
+}
+
+.slick-prev {
+  left: 0;
+}
+
+.slick-next {
+  right: 0;
+}
+
+@media screen and (min-width: 40em) {
+  .slick-arrow {
+    font-size: 1.8em;
+  }
+}

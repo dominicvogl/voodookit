@@ -1,7 +1,51 @@
+// variable definitions
+$slick-zindex: 1 !default;
 
+$slick-arrow-background: $secondary-color !default;
+$slick-arrow-background-hover: lighten($slick-arrow-background, 15%);
+$slick-arrow-size: 1.2em !default;
+$slick-arrow-border-radius: 50px !default;
+$slick-arrow-padding: 0.3em !default;
 
+// mixins
 @mixin mod-slider {
 
+	.slick-arrow {
+		background: $slick-arrow-background;
+		font-size: $slick-arrow-size;
+		z-index: $slick-zindex;
+		padding: $slick-arrow-padding;
+		position: absolute;
+		top: 50%;
+		line-height: 1em;
+		@include border-radius($slick-arrow-border-radius);
+		@include translate3d(0, -50%, 0);
+	}
 
+	.no-touch {
+		.slick-arrow {
+			&:hover {
+				cursor: pointer;
+				background-color: $slick-arrow-background-hover;
+			}
+		}
+	}
+
+	.slick-prev {
+		left: 0;
+	}
+
+	.slick-next {
+		right: 0;
+	}
+
+	// medium breakpoint
+	@include breakpoint(medium) {
+
+		.slick-arrow {
+			font-size: $slick-arrow-size * 1.5;
+		}
+
+	}
 
 }

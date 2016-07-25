@@ -13586,7 +13586,7 @@ return jQuery;
             };
 
             $.extend(options, slickOptions);
-            
+
             _.slick(options);
 
         })
