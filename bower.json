@@ -21,7 +21,6 @@
     "fastclick": "latest",
     "SimpleStateManager": "latest",
     "slick": "https://github.com/kenwheeler/slick.git#master",
-    "owl.carousel": "owl-carousel2#^2.1.6",
     "modernizr": "https://github.com/Modernizr/Modernizr.git#master",
     "family.scss": "^1.0.4"
   },
