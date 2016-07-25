@@ -9,10 +9,11 @@ function stylesTask() {
     var compileStyles = function (baseName) {
         gulp.src([sourcePath + 'scss/' + baseName + '.scss'])
             .pipe(plumber())
-            //.pipe(sourcemaps.init())
-            .pipe(sass({outputStyle: 'expanded'}))
+            .pipe(sourcemaps.init())
+            // .pipe(sass({outputStyle: 'expanded'}))
+            .pipe(sass({outputStyle: 'compressed'}))
             //.pipe(rename({suffix: '.min'}))
-            //.pipe(sourcemaps.write('./'))
+            .pipe(sourcemaps.write('./'))
             .pipe(gulp.dest(destinationPath + 'css'))
     };
 
