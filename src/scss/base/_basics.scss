@@ -1,15 +1,11 @@
 //
-// @author: Dominic Vogl (http://www.dominicvogl.de)
-// @date: 2016-03-11
+// @author: Dominic Vogl
+// @web: http://www.dominicvogl.de
 // -----//-----//-----//-----//-----//
 
 // Define Basic Vars
 $basic-mod-margin: map_get($grid-column-gutter, medium);
 
-@mixin base-basics {
-
-	* {
-		outline: none;
-	}
-	
+* {
+	outline: none;
 }

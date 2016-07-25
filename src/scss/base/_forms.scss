@@ -1,9 +1,10 @@
+//
+// @author: Dominic Vogl
+// @web: http://www.dominicvogl.de
+// -----//-----//-----//-----//-----//
+
 $textarea-base-height: 6em !default;
 
-@mixin base-forms {
-
-	textarea {
-		min-height: ($textarea-base-height);
-	}
-
+textarea {
+	min-height: ($textarea-base-height);
 }

@@ -1,3 +1,8 @@
+//
+// @author: Dominic Vogl
+// @web: http://www.dominicvogl.de
+// -----//-----//-----//-----//-----//
+
 // variable definitions
 $slick-zindex: 1 !default;
 $slick-breakpoint: 1330px !default;
@@ -9,59 +14,56 @@ $slick-arrow-border-radius: 50px !default;
 $slick-arrow-padding: 0.3em !default;
 $slick-arrow-corner-gap: 60px !default;
 
-// mixins
-@mixin mod-slider {
 
+// Styles for elements
+.slick-arrow {
+	background: $slick-arrow-background;
+	font-size: $slick-arrow-size;
+	z-index: $slick-zindex;
+	padding: $slick-arrow-padding;
+	position: absolute;
+	top: 50%;
+	line-height: 1em;
+	@include border-radius($slick-arrow-border-radius);
+	@include translate3d(0, -50%, 0);
+}
+
+.no-touch {
 	.slick-arrow {
-		background: $slick-arrow-background;
-		font-size: $slick-arrow-size;
-		z-index: $slick-zindex;
-		padding: $slick-arrow-padding;
-		position: absolute;
-		top: 50%;
-		line-height: 1em;
-		@include border-radius($slick-arrow-border-radius);
-		@include translate3d(0, -50%, 0);
-	}
-
-	.no-touch {
-		.slick-arrow {
-			&:hover {
-				cursor: pointer;
-				background-color: $slick-arrow-background-hover;
-			}
+		&:hover {
+			cursor: pointer;
+			background-color: $slick-arrow-background-hover;
 		}
 	}
+}
+
+.slick-prev {
+	left: 0;
+	margin-left: ($slick-arrow-corner-gap * 0.2);
+}
+
+.slick-next {
+	right: 0;
+	margin-right: ($slick-arrow-corner-gap * 0.2);
+}
+
+// medium breakpoint
+@include breakpoint(medium) {
+
+	.slick-arrow {
+		font-size: $slick-arrow-size * 1.5;
+	}
+
+}
+
+@include breakpoint($slick-breakpoint) {
 
 	.slick-prev {
-		left: 0;
-		margin-left: ($slick-arrow-corner-gap * 0.2);
+		margin-left: -($slick-arrow-corner-gap);
 	}
 
 	.slick-next {
-		right: 0;
-		margin-right: ($slick-arrow-corner-gap * 0.2);
-	}
-
-	// medium breakpoint
-	@include breakpoint(medium) {
-
-		.slick-arrow {
-			font-size: $slick-arrow-size * 1.5;
-		}
-
-	}
-
-	@include breakpoint($slick-breakpoint) {
-
-		.slick-prev {
-			margin-left: -($slick-arrow-corner-gap);
-		}
-
-		.slick-next {
-			margin-right: -($slick-arrow-corner-gap);
-		}
-
+		margin-right: -($slick-arrow-corner-gap);
 	}
 
 }

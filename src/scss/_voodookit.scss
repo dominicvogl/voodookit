@@ -1,9 +1,9 @@
 //
-// @author: Dominic Vogl (http://www.dominicvogl.de)
-// @date: 2016-03-11
+// @author: Dominic Vogl
+// @web: http://www.dominicvogl.de
 // -----//-----//-----//-----//-----//
 
-$global-namespace: "voo";
+$global-namespace: "voo" !default;
 
 // Import mixins
 @import "mixins/mixins";
@@ -16,30 +16,16 @@ $global-namespace: "voo";
 
 // Import family.scss
 // https://github.com/LukyVj/family.scss
-@import "../bower-components/family.scss/source/src/family";
+//@import "../bower-components/family.scss/source/src/family";
 
-// Import Slick slider
-@import "../bower-components/slick/slick/slick.scss";
 
 // Base
 @import "base/basics";
 @import "base/forms";
 
 // Modules
-@import "modules/header";
+@import "../bower-components/slick/slick/slick.scss";
 @import "modules/slider";
 
 // Special styleguide styles
 @import "styleguide";
-
-@mixin voodookit-everything {
-
-	// Base
-	@include base-forms;
-	@include base-basics;
-
-	// components
-	@include mod-header;
-	@include mod-slider;
-
-}
