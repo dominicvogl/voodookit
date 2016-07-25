@@ -3,9 +3,15 @@
 // @web: http://www.dominicvogl.de
 // -----//-----//-----//-----//-----//
 
-// Define Basic Vars
-$basic-mod-margin: map_get($grid-column-gutter, medium);
+// variables
+$base-mod-gap: map_get($grid-column-gutter, medium);
 
+// styles
 * {
 	outline: none;
+}
+
+ul, ol, dl {
+	margin: 0 0 $list-margin-bottom;
+	padding: 0;
 }

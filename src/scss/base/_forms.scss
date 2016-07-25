@@ -3,8 +3,8 @@
 // @web: http://www.dominicvogl.de
 // -----//-----//-----//-----//-----//
 
-$textarea-base-height: 6em !default;
+$base-textarea-height: 6em !default;
 
 textarea {
-	min-height: ($textarea-base-height);
+	min-height: ($base-textarea-height);
 }

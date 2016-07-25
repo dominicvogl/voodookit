@@ -15,6 +15,7 @@
             var _ = $(this);
             var options = {
                 infinite: true,
+                dots: true,
                 slidesToShow: 1,
                 slidesToScroll: 1
             };
