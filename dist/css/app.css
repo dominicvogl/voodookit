@@ -2781,14 +2781,25 @@ textarea {
 
 .slick-prev {
   left: 0;
+  margin-left: 12px;
 }
 
 .slick-next {
   right: 0;
+  margin-right: 12px;
 }
 
 @media screen and (min-width: 40em) {
   .slick-arrow {
     font-size: 1.8em;
+  }
+}
+
+@media screen and (min-width: 83.125em) {
+  .slick-prev {
+    margin-left: -60px;
+  }
+  .slick-next {
+    margin-right: -60px;
   }
 }

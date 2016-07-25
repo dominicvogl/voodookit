@@ -1,11 +1,13 @@
 // variable definitions
 $slick-zindex: 1 !default;
+$slick-breakpoint: 1330px !default;
 
 $slick-arrow-background: $secondary-color !default;
 $slick-arrow-background-hover: lighten($slick-arrow-background, 15%);
 $slick-arrow-size: 1.2em !default;
 $slick-arrow-border-radius: 50px !default;
 $slick-arrow-padding: 0.3em !default;
+$slick-arrow-corner-gap: 60px !default;
 
 // mixins
 @mixin mod-slider {
@@ -33,10 +35,12 @@ $slick-arrow-padding: 0.3em !default;
 
 	.slick-prev {
 		left: 0;
+		margin-left: ($slick-arrow-corner-gap * 0.2);
 	}
 
 	.slick-next {
 		right: 0;
+		margin-right: ($slick-arrow-corner-gap * 0.2);
 	}
 
 	// medium breakpoint
@@ -44,6 +48,18 @@ $slick-arrow-padding: 0.3em !default;
 
 		.slick-arrow {
 			font-size: $slick-arrow-size * 1.5;
+		}
+
+	}
+
+	@include breakpoint($slick-breakpoint) {
+
+		.slick-prev {
+			margin-left: -($slick-arrow-corner-gap);
+		}
+
+		.slick-next {
+			margin-right: -($slick-arrow-corner-gap);
 		}
 
 	}
