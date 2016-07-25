@@ -27,6 +27,7 @@ $global-namespace: "voo";
 
 // Modules
 @import "modules/header";
+@import "modules/slider";
 
 // Special styleguide styles
 @import "styleguide";
@@ -39,5 +40,6 @@ $global-namespace: "voo";
 
 	// components
 	@include mod-header;
+	@include mod-slider;
 
 }
