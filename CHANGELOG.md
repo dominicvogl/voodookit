@@ -1,5 +1,10 @@
 # Changelog
 
+## Future Releases
+
+### Changes
+* remove mixins for browser support präfix, use autoprefix for this job for easier browser support updates and smaller mixins and sass code
+
 ## [2.0.0] - Release of new Version
 
 ### Changes
