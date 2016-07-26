@@ -3,16 +3,14 @@
 doctype html
 html(lang="de")
 
-    include ../partials/head
+    include ../partials/head/head
 
     section.row.mod.main-section
         div.column
             h1.voo-title Styleguide
 
-            include ../partials/base
+            include ../modules/base
+            include ../modules/components
+            include ../modules/modules
 
-            include ../partials/components
-
-            h2.voo-title III. Modules
-
-    include ../partials/scripts
+    include ../partials/footer/scripts

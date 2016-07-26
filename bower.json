@@ -17,9 +17,9 @@
   ],
   "devDependencies": {
     "foundation-sites": "^6.2.3",
-    "picturefill": "latest",
-    "fastclick": "latest",
-    "SimpleStateManager": "latest",
+    "picturefill": "^3.0.2",
+    "fastclick": "^1.0.6",
+    "SimpleStateManager": "^3.1.3",
     "slick": "https://github.com/kenwheeler/slick.git#master",
     "modernizr": "https://github.com/Modernizr/Modernizr.git#master",
     "family.scss": "^1.0.4"
