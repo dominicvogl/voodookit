@@ -28,8 +28,8 @@ var config = [
         // sourcePath + 'bower-components/feature.js/feature.js',
 
         // Slick
-        sourcePath + 'bower-components/slick/slick/slick.js',
-        sourcePath + 'js/slider/slick.js',
+        sourcePath + 'bower-components/slick-carousel/slick/slick.js',
+        sourcePath + 'js/slider/slick.js'
 
         // Foundation
         //sourcePath + 'bower-components/foundation-sites/js/foundation.core.js',
