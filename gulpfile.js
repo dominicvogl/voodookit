@@ -13,7 +13,8 @@ var config = [
 
         // Fastclick
         sourcePath + 'bower-components/fastclick/lib/fastclick.js',
-        sourcePath + 'js/brwsrs/brwsrs.js',
+        sourcePath + 'bower-components/feature.js/feature.js',
+        sourcePath + 'js/feature-detection/features.js',
 
         // Jquery
         sourcePath + 'bower-components/jquery/dist/jquery.js',
