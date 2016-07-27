@@ -10,11 +10,11 @@ function scriptsTask() {
     var compileScripts = function (files, targetFile) {
         gulp.src(files)
             .pipe(plumber())
-            //.pipe(sourcemaps.init())
+            .pipe(sourcemaps.init())
             .pipe(concat(targetFile + '.js'))
-            //.pipe(uglify())
+            .pipe(uglify())
             //.pipe(rename({suffix: '.min'}))
-            //.pipe(sourcemaps.write('./'))
+            .pipe(sourcemaps.write('./'))
             .pipe(gulp.dest(destinationPath + 'js'));
     };
 

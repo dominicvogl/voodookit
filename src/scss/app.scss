@@ -1,6 +1,6 @@
 //
-// @author: Dominic Vogl (http://www.dominicvogl.de)
-// @date: 2016-03-11
+// @author: Dominic Vogl
+// @web: http://www.dominicvogl.de
 // -----//-----//-----//-----//-----//
 
 // Import global settings
@@ -9,9 +9,8 @@
 // Import Foundation
 @import "../bower-components/foundation-sites/scss/foundation";
 
-// Import Voodookit
-@import "voodookit";
-
-// Include components
+// Include foundation
 @include foundation-everything;
-@include voodookit-everything
+
+// Import & include Voodookit
+@import "voodookit";

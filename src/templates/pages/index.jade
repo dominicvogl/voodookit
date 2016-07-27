@@ -1,19 +1,16 @@
+- var namespace = "voo"
+
 doctype html
 html(lang="de")
 
-    include ../partials/head
+    include ../partials/head/head
 
     section.row.mod.main-section
         div.column
-            h1 Let's go!
+            h1.voo-title Styleguide
 
-        div.column
-            h1 Let's go!
+            include ../modules/base
+            include ../modules/components
+            include ../modules/modules
 
-        div.column
-            h1 Let's go!
-
-        div.column
-            h1 Let's go!
-
-    include ../partials/footer-scripts
+    include ../partials/footer/scripts

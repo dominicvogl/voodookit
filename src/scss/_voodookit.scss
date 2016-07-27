@@ -1,7 +1,9 @@
 //
-// @author: Dominic Vogl (http://www.dominicvogl.de)
-// @date: 2016-03-11
+// @author: Dominic Vogl
+// @web: http://www.dominicvogl.de
 // -----//-----//-----//-----//-----//
+
+$global-namespace: "voo" !default;
 
 // Import mixins
 @import "mixins/mixins";
@@ -14,16 +16,15 @@
 
 // Import family.scss
 // https://github.com/LukyVj/family.scss
-@import "../bower-components/family.scss/source/src/family";
+//@import "../bower-components/family.scss/source/src/family";
 
-// Import mods
-@import "modules/basics";
-@import "modules/header";
+// Base
+@import "base/basics";
+@import "base/forms";
 
-@mixin voodookit-everything {
+// Modules
+@import "../bower-components/slick/slick/slick.scss";
+@import "modules/slider";
 
-	// components
-	@include mod-header;
-	@include mod-basics;
-
-}
+// Special styleguide styles
+@import "styleguide";

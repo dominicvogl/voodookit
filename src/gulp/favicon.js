@@ -1,5 +1,4 @@
 var favicons = require('gulp-favicons');
-var gutil = require("gutil");
 
 gulp.task('favicon', faviconTask);
 
@@ -16,9 +15,9 @@ function faviconTask() {
                 android: true,
                 appleIcon: true,
                 appleStartup: false,
-                coast: true,
+                coast: false,
                 favicons: true,
-                firefox: true,
+                firefox: false,
                 opengraph: true,
                 windows: false,
                 yandex: false
