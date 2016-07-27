@@ -7,8 +7,10 @@
 // -----//-----//-----//-----//-----*/
 
 // define html element
-var html = $('html');
-html.removeClass('no-js').addClass('js');
+var html = document.querySelector('html');
+
+html.classList.remove('no-js');
+html.classList.add('js');
 
 // @todo Remove jquery stuff, use vanilla js
 
@@ -16,24 +18,30 @@ if(supports('svg')){
 
     // when no svg is supportet...
     // add ".no-svg" class to <html>...
-    html.addClass('no-svg');
+    html.classList.add('no-svg');
 
     // ... and change ".svg" to ".png"
-    $('img[src$="svg"]').attr('src', function() {
-        return $(this).attr('src').replace('.svg', '.png');
-    });
+    var imgs = document.getElementsByTagName('img');
+    var endsWithDotSvg = /.*\.svg$/
+    var i = 0;
+    var l = imgs.length;
+    for(; i != l; ++i) {
+        if(imgs[i].src.match(endsWithDotSvg)) {
+            imgs[i].src = imgs[i].src.slice(0, -3) + 'png';
+        }
+    }
 
 } else {
     // ... or hust ad ".svg" to <html>
-    html.addClass('svg');
+    html.classList.add('svg');
 }
 
 // check touch support and render class to <html>
 if(!supports('touch')) {
-    html.addClass('no-touch');
+    html.classList.add('no-touch');
 }
 else {
-    html.addClass('touch');
+    html.classList.add('touch');
 }
 
 /**

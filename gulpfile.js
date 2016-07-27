@@ -13,6 +13,7 @@ var config = [
 
         // Fastclick
         sourcePath + 'bower-components/fastclick/lib/fastclick.js',
+        sourcePath + 'js/brwsrs/brwsrs.js',
 
         // Jquery
         sourcePath + 'bower-components/jquery/dist/jquery.js',
@@ -23,6 +24,8 @@ var config = [
         // Simple state manager
         // sourcePath + 'bower-components/SimpleStateManager/src/ssm.js',
 
+        // Feature.JS
+        // sourcePath + 'bower-components/feature.js/feature.js',
 
         // Slick
         sourcePath + 'bower-components/slick/slick/slick.js',
@@ -58,8 +61,6 @@ var config = [
         //sourcePath + 'bower-components/foundation-sites/js/foundation.toggler.js',
         //sourcePath + 'bower-components/foundation-sites/js/foundation.tooltip.js',
 
-        // Own stuff
-        sourcePath + 'js/brwsrs/brwsrs.js'
     ]
 ];
 
