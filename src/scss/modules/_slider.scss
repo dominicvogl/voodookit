@@ -26,8 +26,8 @@ $slick-corner-gap: 60px !default;
 	top: 50%;
 	line-height: 1em;
 	color: $slick-color;
+	transform: translate3d(0, -50%, 0);
 	@include border-radius($slick-border-radius);
-	@include translate3d(0, -50%, 0);
 }
 
 .slick-prev {

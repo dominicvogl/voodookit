@@ -21,3 +21,7 @@ ul, ol, dl {
 		text-decoration: underline;
 	}
 }
+
+body {
+	background-image: linear-gradient(to bottom, $primary-color, $secondary-color);
+}
