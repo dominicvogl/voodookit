@@ -13,6 +13,7 @@ $global-namespace: "voo" !default;
 
 // Import typography
 @import "typography/fonts";
+@import "typography/typography";
 
 // Import family.scss
 // https://github.com/LukyVj/family.scss
@@ -27,4 +28,4 @@ $global-namespace: "voo" !default;
 @import "modules/slider";
 
 // Special styleguide styles
-@import "styleguide";
+// @import "styleguide";

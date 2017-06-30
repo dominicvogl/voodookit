@@ -1,0 +1,34 @@
+:root
+{
+	--scale: 1.1;
+	--color: $body-font-color;
+	--font-size-1: $base-font-size;
+	--font-size-2: calc(var(--scale) * var(--font-size-1));
+	--font-size-3: calc(var(--scale) * var(--font-size-2));
+	--font-size-4: calc(var(--scale) * var(--font-size-3));
+	--font-size-5: calc(var(--scale) * var(--font-size-4));
+	--font-size-6: calc(var(--scale) * var(--font-size-5));
+}
+
+@include breakpoint(medium)
+{
+	:root { --scale: 1.15 }
+}
+
+@include breakpoint(large)
+{
+	:root { --scale: 1.35 }
+}
+
+html
+{
+	font: 1em/1 $header-font-family;
+	color: $primary-color;
+}
+
+h1 { font-size: var(--font-size-6) }
+h2 { font-size: var(--font-size-5) }
+h3 { font-size: var(--font-size-4) }
+h4 { font-size: var(--font-size-3) }
+h5 { font-size: var(--font-size-2) }
+h6 { font-size: var(--font-size-1) }

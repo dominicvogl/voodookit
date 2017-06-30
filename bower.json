@@ -16,7 +16,7 @@
     "gulp"
   ],
   "devDependencies": {
-    "foundation-sites": "^6.2.3",
+    "foundation-sites": "^6.4.0",
     "picturefill": "^3.0.2",
     "fastclick": "^1.0.6",
     "SimpleStateManager": "^3.1.3",

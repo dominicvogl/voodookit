@@ -1,0 +1,83 @@
+/// Color of headers.
+/// @type Color
+$header-color: inherit !default;
+
+/// Line height of headers.
+/// @type Number
+$header-lineheight: 1.4 !default;
+
+/// Bottom margin of headers.
+/// @type Number
+$header-margin-bottom: 0.5rem !default;
+
+/// Text rendering method of headers.
+/// @type String
+$header-text-rendering: optimizeLegibility !default;
+
+/// Font size of `<small>` elements.
+/// @type Number
+$small-font-size: 80% !default;
+
+/// Line height of text inside `<p>` elements.
+/// @type Number
+$paragraph-lineheight: 1.6 !default;
+
+/// Bottom margin of paragraphs.
+/// @type Number
+$paragraph-margin-bottom: 1rem !default;
+
+/// Text rendering method for paragraph text.
+/// @type String
+$paragraph-text-rendering: optimizeLegibility !default;
+
+// Typography resets
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+p,
+blockquote,
+th,
+td {
+	margin: 0;
+	padding: 0;
+}
+
+// Paragraphs
+p {
+	font-size: inherit;
+	line-height: $paragraph-lineheight;
+	margin-bottom: $paragraph-margin-bottom;
+	text-rendering: $paragraph-text-rendering;
+}
+
+// Emphasized text
+em,
+i {
+	font-style: italic;
+	line-height: inherit;
+}
+
+// Strong text
+strong,
+b {
+	font-weight: $global-weight-bold;
+	line-height: inherit;
+}
+
+// Small text
+small {
+	font-size: $small-font-size;
+	line-height: inherit;
+}
