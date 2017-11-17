@@ -25,3 +25,9 @@ ul, ol, dl {
 body {
 	background-image: linear-gradient(to bottom, $primary-color, $secondary-color);
 }
+
+// mark all images without "alt" Tag with red line
+img[alt=""],
+img:not([alt]) {
+	border: 5px dashed $primary-color;
+}
