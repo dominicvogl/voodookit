@@ -2,7 +2,7 @@
 {
 	--scale: 1.1;
 	--color: $body-font-color;
-	--font-size-1: $base-font-size;
+	--font-size-1: $global-font-size;
 	--font-size-2: calc(var(--scale) * var(--font-size-1));
 	--font-size-3: calc(var(--scale) * var(--font-size-2));
 	--font-size-4: calc(var(--scale) * var(--font-size-3));
