@@ -23,6 +23,9 @@ $global-namespace: "voo" !default;
 @import "base/basics";
 @import "base/forms";
 
+// Components
+@import "components/_buttons";
+
 // Modules
 @import "../bower-components/slick-carousel/slick/slick.scss";
 @import "modules/slider";
