@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.0.0] - all new Voodookit
+* add browsersync
+* cleanup gulp workflow
+* add babel
+* cleanup
+* remove jade templating engine
+
+
 ## Future Releases
 
 ### Changes
