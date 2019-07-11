@@ -1,8 +1,18 @@
-# Ignore some Stuff
+# Ignore files
 
-.idea
-.zip
-node_modules
 .DS_Store
-src/bower-components/
+Thumbs.db
+*.zip
+*.rar
+*.tar
+*.gz
+*.pdf
+*.psd
+*.xd
+*.log
 package-lock.json
+
+
+# ignore folders
+.idea
+node_modules

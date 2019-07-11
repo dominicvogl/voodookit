@@ -1,78 +1,104 @@
-// Gulp Modules
-gulp = require('gulp');
-var requireDir = require('require-dir');
+const gulp = require('gulp'),
+    sass = require('gulp-sass'),
+    cleanCSS = require('gulp-clean-css'),
+    autoprefixer = require('gulp-autoprefixer'),
+    rename = require('gulp-rename'),
+    inject = require('gulp-inject'),
+    uglify = require('gulp-uglify'),
+    concat = require('gulp-concat'),
+    plumber = require('gulp-plumber'),
+    babel = require('gulp-babel'),
+    browserify = require('gulp-browserify'),
+    clean = require('gulp-clean'),
+    sourcemaps = require('gulp-sourcemaps'),
+    htmlmin = require('gulp-html-minifier'),
+    browserSync = require('browser-sync');
 
-// Base Configuration for gulp modules
-var config = [
-    environment = 'fm',
-    sourcePath = 'src/',
-    destinationPath = 'dist/',
 
-    // JS Filelist for concatinating
-    jsFilesApp = [
+const src = './src/',
+    dist = './dist/';
 
-        // Fastclick
-        sourcePath + 'bower-components/fastclick/lib/fastclick.js',
-        sourcePath + 'bower-components/feature.js/feature.js',
-        sourcePath + 'js/feature-detection/features.js',
 
-        // Jquery
-        sourcePath + 'bower-components/jquery/dist/jquery.js',
+// ################################
+// Minify SASS
 
-        // Picturefill
-        // sourcePath + 'bower-components/dist/picturefill.js',
+const gulpSass = () => {
+    gulp.src(src + 'assets/sass/*.scss')
+        .pipe(sourcemaps.init())
+        // .pipe(clean())
+        .pipe(plumber())
+        .pipe(sass())
+        .pipe(autoprefixer())
+        .pipe(rename({basename: 'style'}))
+        // .pipe(gulp.dest(dist + 'assets/css'))
+        .pipe(cleanCSS())
+        .pipe(rename({suffix: '.min'}))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest(dist + 'assets/css'))
+        .pipe(browserSync.stream());
+};
 
-        // Simple state manager
-        // sourcePath + 'bower-components/SimpleStateManager/src/ssm.js',
 
-        // Feature.JS
-        // sourcePath + 'bower-components/feature.js/feature.js',
+// ################################
+// Minify JS
 
-        // Slick
-        sourcePath + 'bower-components/slick-carousel/slick/slick.js',
-        sourcePath + 'js/slider/slick.js'
+const gulpJS = () => {
+    gulp.src(src + 'assets/js/*.js')
+        .pipe(sourcemaps.init()) // start sourcemap
+        .pipe(plumber()) // prevent gulp crash on error event
+        .pipe(concat('app.js')) // define filename after merging all files
+        .pipe(babel({
+            presets: ['es2015']
+        })) // Use ES6 or ES7 and compile to "normal" javascript for browsercompatibility
+        .pipe(browserify({
+            insertGlobal: true,
+            debug: !gulp.env.production
+        })) // Use fileimports from node modules
+        .pipe(uglify()) // minify javascript
+        .pipe(rename({suffix: '.min'})) // add sufficx
+        .pipe(sourcemaps.write('.')) // write sourcemap
+        .pipe(gulp.dest(dist + 'assets/js')) // define destination folder
+        .pipe(browserSync.stream());
+};
 
-        // Foundation
-        //sourcePath + 'bower-components/foundation-sites/js/foundation.core.js',
-        //sourcePath + 'bower-components/foundation-sites/js/foundation.util.box.js',
-        //sourcePath + 'bower-components/foundation-sites/js/foundation.util.keyboard.js',
-        //sourcePath + 'bower-components/foundation-sites/js/foundation.util.mediaQuery.js',
-        //sourcePath + 'bower-components/foundation-sites/js/foundation.util.motion.js',
-        //sourcePath + 'bower-components/foundation-sites/js/foundation.util.nest.js',
-        //sourcePath + 'bower-components/foundation-sites/js/foundation.util.timerAndImageLoader.js',
-        //sourcePath + 'bower-components/foundation-sites/js/foundation.util.touch.js',
-        //sourcePath + 'bower-components/foundation-sites/js/foundation.util.triggers.js',
-        //sourcePath + 'bower-components/foundation-sites/js/foundation.abide.js',
-        //sourcePath + 'bower-components/foundation-sites/js/foundation.accordion.js',
-        //sourcePath + 'bower-components/foundation-sites/js/foundation.accordionMenu.js',
-        //sourcePath + 'bower-components/foundation-sites/js/foundation.drilldown.js',
-        //sourcePath + 'bower-components/foundation-sites/js/foundation.dropdown.js',
-        //sourcePath + 'bower-components/foundation-sites/js/foundation.dropdownMenu.js',
-        //sourcePath + 'bower-components/foundation-sites/js/foundation.equalizer.js',
-        //sourcePath + 'bower-components/foundation-sites/js/foundation.interchange.js',
-        //sourcePath + 'bower-components/foundation-sites/js/foundation.magellan.js',
-        //sourcePath + 'bower-components/foundation-sites/js/foundation.offcanvas.js',
-        //sourcePath + 'bower-components/foundation-sites/js/foundation.orbit.js',
-        //sourcePath + 'bower-components/foundation-sites/js/foundation.responsiveMenu.js',
-        //sourcePath + 'bower-components/foundation-sites/js/foundation.responsiveToggle.js',
-        //sourcePath + 'bower-components/foundation-sites/js/foundation.reveal.js',
-        //sourcePath + 'bower-components/foundation-sites/js/foundation.slider.js',
-        //sourcePath + 'bower-components/foundation-sites/js/foundation.sticky.js',
-        //sourcePath + 'bower-components/foundation-sites/js/foundation.tabs.js',
-        //sourcePath + 'bower-components/foundation-sites/js/foundation.toggler.js',
-        //sourcePath + 'bower-components/foundation-sites/js/foundation.tooltip.js',
 
-    ]
-];
+// ################################
+// Minify HTML
 
-// Include other gulp modules
-requireDir(sourcePath + '/gulp');
+const gulpHTML = () => {
+    gulp.src(dist + '*.html', {force: true})
+        .pipe(clean());
+    gulp.src(src + '*.html')
+        .pipe(htmlmin({collapseWhitespace: true}))
+        .pipe(gulp.dest(dist))
+        .pipe(browserSync.stream());
+};
 
-var defaultTasks = [
-    'styles',
-    'scripts',
-    'jade',
-    'watch'
-];
 
-gulp.task('default', defaultTasks);
+// ################################
+// define gulp tasks
+
+gulp.task('sass', gulpSass);
+gulp.task('js', gulpJS);
+gulp.task('html', gulpHTML);
+
+
+// ################################
+// Watcher
+
+gulp.task('default', function () {
+    // Initial compiling of files
+    gulpSass();
+    gulpJS();
+    gulpHTML();
+
+    // Start browsersync server
+    browserSync.init({
+        server: './dist' // define folder to watch
+    }); // start server for effective developing
+
+    // watch some files
+    gulp.watch([src + '*.html'], ['html']);
+    gulp.watch([src + 'assets/sass/*.scss'], ['sass']);
+    gulp.watch([src + 'assets/js/*.js'], ['js']);
+});
