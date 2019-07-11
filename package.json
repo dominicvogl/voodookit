@@ -30,6 +30,10 @@
     "node-sass": "^4.9.0"
   },
   "dependencies": {
+    "filepond": "^4.4.10",
     "jquery": "^3.4.1"
+  },
+  "sass": {
+    "includePaths": ["./node_modules"]
   }
 }

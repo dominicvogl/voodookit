@@ -1,6 +1,13 @@
-import $ from 'jquery';
+import * as FilePond from 'filepond';
 
-const hallo = 0;
+const inputElement = document.querySelector('input[type="file"]');
+const filepondTest = FilePond.create(
+    inputElement,
+    {
 
-console.log( $('body p') );
-console.log( 'TEST TEST' );
+    }
+);
+
+FilePond.setOptions( {
+   server: 'test/'
+});

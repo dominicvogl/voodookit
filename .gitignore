@@ -15,4 +15,5 @@ package-lock.json
 
 # ignore folders
 .idea
+dist
 node_modules
